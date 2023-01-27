@@ -1,6 +1,6 @@
 <?php
 
-    require_once "Conexion.php";
+    require_once ('Conexion.php');
     
     class Crud extends Conexion{
         public function mostrarDatos(){
