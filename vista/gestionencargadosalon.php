@@ -1,4 +1,4 @@
-<?php require_once ("insertarModal.php")?>
+<?php require_once ("./comunes/insertarModal.php")?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ecd5745f4f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     
     <title>Gestion Encargados Salon</title>
     </head>
@@ -56,65 +60,14 @@
     </div>
 <main>
 
-<div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-          
-    <!-- METODO VIEJO    
-
-    <form method="post" action=; id="f">
-            
-        <div class="container">
-
-                    <div class="row">
-
-                    <div class="col">
-
-                    <label for="clave">Correo</label>
-
-                    <input class="form-control" type="text" id="correo" name="correo"/>
-                    </div>
+<div class="container"> 
 
 
-                    <div class="col">
-
-                    <label for="cedula">Cedula</label>
-
-                    <input class="form-control" type="text" id="cedula" name="cedula"/>
-        
-                    <span id="scedula"></span>
-
-                 
-                </div>
-
-                
-
-            </div>
-
-            <div class="row">
-           
-            <div class="col">
-
-                <label for="usuario">Nombres</label>
-
-                <input class="form-control" type="text" id="nombre" name="nombre" />
-
-                <label for="usuario">Apellidos</label>
-
-                <input class="form-control" type="text" id="apellido" name="apellido" />
-                
 
 
-            </div>
 
-            <div class="col">
 
-                <label for="clave">Telefono</label>
-
-                <input class="form-control" type="text" id="telefono" name="telefono"/>
-            </div> -->
-            <!--cierre div row usuario clave-->
-
-            <!--Llamamos al modal con un boton-->
-            <span class="btn btn-primary" data-toggle="modal" data-target="exampleModal">Nuevo registro
+            <href class="btn btn-primary" data-toggle="modal" data-target="#insertarModal">Nuevo registro
 									<i class="fas fa-plus-circle"></i> 
 
             </div>
@@ -170,9 +123,9 @@
 
    
 
-    <script src="js/jquery.min.js" ></script>
+    <!-- <script src="js/jquery.min.js" ></script>
     <script src="js/popper.min.js" ></script>
-    <script src="js/bootstrap.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script> -->
     <script src="js/script.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
