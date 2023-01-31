@@ -28,16 +28,19 @@
         $datosTabla=$datosTabla.'    
                             <tr style="cursor:pointer">
                                 <td>'.$value['idDirectorSalon'].'</td>
-                                <td>'.$value['Nombre1'.'Nombre2'].'</td>
-                                <td>'.$value['Apellido1'.'Apellido2'].'</td>
+                                <td>'.$value['Nombre1'].'</td>
+                                <td>'.$value['Apellido1'].'</td>
                                 <td>'.$value['Correo'].'</td>
                                 <td>'.$value['Telefono'].'</td>
                                 <td>
-                                    <span class="btn btn-success btn-sm" onclick="modificarDatos('.$value['id'].')"><i class="fa-solid fa-user-pen"></i></a>
-                                    <a href="" class="btn btn-danger btn-sm" onclick="eliminarDatos('.$value['id'].')"><i class="fa-solid fa-user-xmark"></i></a>
+                                <button class="btn btn-success btn-sm" id="editar" name="editar"><i class="fa-solid fa-user-pen"></button>
+                                <button class="btn btn-danger btn-sm" id="eliminar" name="eliminar"><i class="fa-solid fa-user-xmark"></i></button>                                
                                 </td>
                             </tr>';
 
     }
     echo $tabla.$datosTabla.'</tbody></table>';
 ?>
+
+<!-- //<span class="btn btn-success btn-sm" onclick="modificarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-pen"></i></a>
+                                    <a href="" class="btn btn-danger btn-sm" onclick="eliminarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-xmark"></i></a>// -->

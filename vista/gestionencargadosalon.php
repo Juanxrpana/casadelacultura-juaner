@@ -1,9 +1,10 @@
+<?php require_once ("insertarModal.php")?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Framework Boostrap-->
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -56,7 +57,9 @@
 <main>
 
 <div class="container"> <!-- todo el contenido ira dentro de esta etiqueta-->
-            
+          
+    <!-- METODO VIEJO    
+
     <form method="post" action=; id="f">
             
         <div class="container">
@@ -65,9 +68,9 @@
 
                     <div class="col">
 
-                    <label for="clave">Fecha de nacimiento</label>
+                    <label for="clave">Correo</label>
 
-                    <input class="form-control" type="date" id="fechanacimiento" name="fechanacimiento"/>
+                    <input class="form-control" type="text" id="correo" name="correo"/>
                     </div>
 
 
@@ -107,10 +110,13 @@
                 <label for="clave">Telefono</label>
 
                 <input class="form-control" type="text" id="telefono" name="telefono"/>
-            </div>
-
-           
+            </div> -->
             <!--cierre div row usuario clave-->
+
+            <!--Llamamos al modal con un boton-->
+            <span class="btn btn-primary" data-toggle="modal" data-target="exampleModal">Nuevo registro
+									<i class="fas fa-plus-circle"></i> 
+
             </div>
 
             <!-- linea abajo-->
@@ -161,6 +167,9 @@
 
 
 </main>
+
+   
+
     <script src="js/jquery.min.js" ></script>
     <script src="js/popper.min.js" ></script>
     <script src="js/bootstrap.min.js" ></script>
