@@ -6,6 +6,7 @@
         exit;
 }
 
+
     require_once ("../modelo/Crud.php");
 
     $datos=array(
@@ -14,18 +15,14 @@
             'Nombre1' => $_POST['Nombre1'],
             'Nombre2' => $_POST['Nombre2'],
             'Apellido1' => $_POST['Apellido1'],
-            'Apellido2' => $_POST['Apellido2']);
+            'Apellido2' => $_POST['Apellido2']
+            );
 
-            echo Crud::insertarDatos($datos);
+            $registro=new Crud;
+            echo $registro->insertarDatos($datos);
+
 
 ?>
 
 
 
-<!-- idDirectorSalon
-Cedula
-Correo
-Nombre1
-Nombre2
-Apellido1
-Apellido2 -->

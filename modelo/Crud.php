@@ -3,7 +3,9 @@
      require_once ('../modelo/Conexion.php');
     
     class Crud extends Conexion{
+        
        
+        
         public function mostrarDatos(){
 
         $co = $this->conecta();
@@ -18,7 +20,8 @@
         }
 
         public function insertarDatos($datos){
-        
+
+            $crud = new Crud();
             $co = $this->conecta();
             $co->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     
@@ -31,8 +34,10 @@
             $query->bindParam(":Nombre2", $datos["Nombre2"], PDO::PARAM_STR);
             $query->bindParam(":Apellido1", $datos["Apellido1"], PDO::PARAM_STR);
             $query->bindParam(":Apellido2", $datos["Apellido2"], PDO::PARAM_STR);
+            return $query->execute();
             return $sql;
         }
+        
     }
-
+$crud = new Crud();
 ?>

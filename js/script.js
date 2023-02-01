@@ -52,9 +52,9 @@ $(document).ready(function(){
                     }        
                 }
                 
-           /*  }).done(function(r){
+             }).done(function(r){
                 console.log("3");
-                      console.log(r); */
+                      console.log(r);
                        
             });
             return false;        

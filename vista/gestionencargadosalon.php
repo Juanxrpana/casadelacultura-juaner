@@ -61,14 +61,25 @@
 <main>
 
 <div class="container"> 
+       
+        <div class="botoneraencargado">
+
+                    <href class="btn btn-primary" data-toggle="modal" data-target="#insertarModal">Nuevo registro
+						<i class="fas fa-plus-circle"></i> 
 
 
+                    <div class="row">
 
+                    <div class="col-5">
+                        <button class="btn btn-success" id="incluir" name="incluir">INCLUIR</button>
+                    </div>
 
+                    <div class="col">
+                        <a href="?pagina=registro" class="btn btn-secondary">REGRESAR</a>
+                    </div>          
+                    </div>
 
-
-            <href class="btn btn-primary" data-toggle="modal" data-target="#insertarModal">Nuevo registro
-									<i class="fas fa-plus-circle"></i> 
+                    </div>
 
             </div>
 
@@ -79,25 +90,6 @@
             </div>
             </div>
 
-            <!-- botonera-->
-            <div class="botoneraencargado">
-
-                <div class="row">
-
-                <div class="col-5">
-                    <button class="btn btn-primary" id="incluir" name="incluir">INCLUIR</button>
-                </div>
-
-                <div class="col">
-                    <a href="?pagina=registro" class="btn btn-primary">REGRESAR</a>
-                </div>          
-                </div>
-
-            </div>
-            <br></br>
-           
-                   
-        
         </div>
 
         
@@ -120,16 +112,9 @@
 
 
 </main>
-
-   
-
-    <!-- <script src="js/jquery.min.js" ></script>
-    <script src="js/popper.min.js" ></script>
-    <script src="js/bootstrap.min.js" ></script> -->
     <script src="js/script.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-    <script src="js/script.js" ></script>
+    <script src="js/sweetalert.min.js" ></script>
 
 </body>
 
