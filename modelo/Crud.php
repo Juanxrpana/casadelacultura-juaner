@@ -21,7 +21,7 @@
 
         public function insertarDatos($datos){
 
-            $crud = new Crud();
+            
             $co = $this->conecta();
             $co->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     
@@ -39,5 +39,5 @@
         }
         
     }
-$crud = new Crud();
+
 ?>
