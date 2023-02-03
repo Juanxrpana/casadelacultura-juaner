@@ -34,7 +34,7 @@
             $query->bindParam(":Nombre2", $datos["Nombre2"], PDO::PARAM_STR);
             $query->bindParam(":Apellido1", $datos["Apellido1"], PDO::PARAM_STR);
             $query->bindParam(":Apellido2", $datos["Apellido2"], PDO::PARAM_STR);
-            return $query->execute();
+            return $query->execute(); 
             return "si";
         }
         

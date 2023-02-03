@@ -12,7 +12,7 @@
       <div class="modal-body">
           <form id="frminsert" onsubmit="return insertarDatos()" method="post">
               <label>Cédula</label>
-              <input type="text" id="idDirectorSalon" name="Cedula" class="form-control form-control-sm" required="">
+              <input type="text" id="idDirectorSalon" name="idDirectorSalon" class="form-control form-control-sm" required="">
               <label>Correo</label>
               <input type="text" id="Correo" name="Correo" class="form-control form-control-sm" required="">
               <label>Nombre</label>

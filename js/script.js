@@ -43,23 +43,23 @@ $(document).ready(function(){
             $.ajax({
                 async: true,
                 url:'./modelo/insertarDatos.php',
-                method: 'POST' ,
+                method: 'POST',
                 data:dato,
                 
-                succes:function(re){
-                    alert("si hay vida papu");
-                    alert(re);
+                success:function(re){
                     console.log("2");
+                    alert(re);
                     if(re == "si"){
                         $('#frminsert').reset();//limpiar formulario
+                        console.log("3");
                         mostrar();
-                        alert("si se agrego papu");
+                        alert("si se agrego");
                         swal("¡Agregado correctamente!",":D","success")
                     }else{
                         swal("Error",":(error)");
                     }        
                 }
              });
-            console.log("3");
+            console.log("4");
             return false;        
         }
