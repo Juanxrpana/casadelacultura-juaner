@@ -37,7 +37,7 @@ $(document).ready(function(){
         }
 
         function insertarDatos(id){
-            console.log("1");
+            console.log("entrando");
             var dato = $('#frminsert').serialize();
             console.log(dato);/* pa saber si tomó los datos */
             $.ajax({
@@ -47,11 +47,12 @@ $(document).ready(function(){
                 data:dato,
                 
                 success:function(re){
-                    console.log("2");
+                    console.log("entrando a success");
                     alert(re);
-                    if(re == "si"){
+                    console.log(re);
+                    if(re == "1"){
+                        console.log("entrando al if");
                         $('#frminsert').reset();//limpiar formulario
-                        console.log("3");
                         mostrar();
                         alert("si se agrego");
                         swal("¡Agregado correctamente!",":D","success")
@@ -60,6 +61,6 @@ $(document).ready(function(){
                     }        
                 }
              });
-            console.log("4");
+            console.log("saliendo de la function");
             return false;        
         }
