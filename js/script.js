@@ -38,24 +38,28 @@ $(document).ready(function(){
 
         function insertarDatos(id){
             console.log("1");
-
+            var dato = $('#frminsert').serialize();
+            console.log(dato);/* pa saber si tomó los datos */
             $.ajax({
-                url:'modelo/insertarDatos.php',
-                data:$('#frminsert').serialize(),
-                succes:function(r){
-                    if(r==1){
+                async: true,
+                url:'./modelo/insertarDatos.php',
+                method: 'POST' ,
+                data:dato,
+                
+                succes:function(re){
+                    alert("si hay vida papu");
+                    alert(re);
+                    console.log("2");
+                    if(re == "si"){
                         $('#frminsert').reset();//limpiar formulario
                         mostrar();
+                        alert("si se agrego papu");
                         swal("¡Agregado correctamente!",":D","success")
                     }else{
                         swal("Error",":(error)");
                     }        
                 }
-                
-             }).done(function(r){
-                console.log("3");
-                      console.log(r);
-                       
-            });
+             });
+            console.log("3");
             return false;        
         }
