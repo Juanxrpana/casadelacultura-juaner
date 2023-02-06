@@ -20,6 +20,7 @@
                                 <th scope="col">Correo</th>
                                 <th scope="col">Telefono</th>
                                 <th scope="col"></th>
+                               
                             </tr>
                      </thead>
                      <tbody>';
@@ -33,9 +34,12 @@
                                 <td>'.$value['Correo'].'</td>
                                 <td>'.$value['Telefono'].'</td>
                                 <td>
-                                <button class="btn btn-success btn-sm" id="editar" name="editar"><i class="fa-solid fa-user-pen"></button>
-                                <button class="btn btn-danger btn-sm" id="eliminar" name="eliminar"><i class="fa-solid fa-user-xmark"></i></button>                                
+                                <a class="btn btn-success btn-sm"  data-toggle="modal" data-target="#modificarModal" onclick="modificarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-pen"></i></a>
+                                <a href="" class="btn btn-danger btn-sm" onclick="eliminarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-xmark"></i></a>
                                 </td>
+                                
+                               
+                                
                             </tr>';
 
     }

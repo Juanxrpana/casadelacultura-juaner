@@ -13,7 +13,7 @@
         $sql=$co->query("SELECT *from directorsalon");
 
             return $sql;
-            //$query->close();//
+          
           
 
         }
@@ -44,6 +44,32 @@
 			}
             
         }
+
+        public function modificarDatos($id){
+
+            $sql="SELECT idDirectorSalon,
+                         Correo,
+                         Nombre1,
+                        Nombre2,
+                        Apellido1,
+                        Apellido2,
+                    from directorsalon where id=:idDirectorSalon";
+                    $query=Conexion::conecta()->prepare($sql);
+                    $query->bindParam(":idDirectorSalon", $id, PDO::PARAM_STR);
+                    $query->execute();
+                    return $query->fetch();
+                    /* $query->close(); */
+
+
+
+            /* $co = $this->conecta();
+            $co->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $sql=$co->query("SELECT *from directorsalon where id=id");
+            return $sql; */
+            
+              
+    
+            }
         
     }
 

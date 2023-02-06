@@ -29,6 +29,24 @@ $(document).ready(function(){
             })
         }
         function modificarDatos(id){
+            console.log("entrando a modificarDatos")
+            
+            $.ajax({
+                async: true,
+                url:'./modelo/modificarDatos.php',
+                type: 'POST',
+                data:"id=" + id,
+                success:function(r){
+                    r= jQuery.parseJSON(r);
+                    $('#id').val(r['id']);
+                    $('#Correou').val(r['Correo']);
+                    $('#Nombre1u').val(r['Nombre1']);
+                    $('#Nombre2u').val(r['Nombre2']);
+                    $('#Apellido1u').val(r['Apellido1']);
+                    $('#Apellido2u').val(r['Apellido2']);
+                }
+
+            })
 
         }
 
@@ -58,7 +76,7 @@ $(document).ready(function(){
                         console.log("entrando al else");
                         $('#frminsert');//limpiar el formulario para otro registro
                         mostrar();
-                        alert("si se agrego correctamente: " + Nombre1);
+                        alert("si se agrego correctamente: ");
                         swal("¡"+re+"!",":D","success");
                     }        
                 }
