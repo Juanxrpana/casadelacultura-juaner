@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     mostrar();
-    insertarDatos();
+    
 
 
 
@@ -50,14 +50,14 @@ $(document).ready(function(){
                     console.log("entrando a success");
                     alert(re);
                     console.log(re);
-                    if(re == "1"){
+                    if(re== 'positivo'){
                         console.log("entrando al if");
                         $('#frminsert').reset();//limpiar formulario
                         mostrar();
                         alert("si se agrego");
                         swal("¡Agregado correctamente!",":D","success")
                     }else{
-                        swal("Error",":(error)");
+                        swal("Error","No se ingreso en la tabla :C" , "error");
                     }        
                 }
              });
