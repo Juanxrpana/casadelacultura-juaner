@@ -50,14 +50,16 @@ $(document).ready(function(){
                     console.log("entrando a success");
                     alert(re);
                     console.log(re);
-                    if(re== 'positivo'){
-                        console.log("entrando al if");
-                        $('#frminsert').reset();//limpiar formulario
+                    a = re;
+                    if (a === "positivo"){
+                       swal ("Error","No se ingreso correctamente","error");
+                    }
+                    else{
+                        console.log("entrando al else");
+                        $('#frminsert');//limpiar el formulario para otro registro
                         mostrar();
-                        alert("si se agrego");
-                        swal("¡Agregado correctamente!",":D","success")
-                    }else{
-                        swal("Error","No se ingreso en la tabla :C" , "error");
+                        alert("si se agrego correctamente: " + Nombre1);
+                        swal("¡"+re+"!",":D","success");
                     }        
                 }
              });

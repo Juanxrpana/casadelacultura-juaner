@@ -24,7 +24,6 @@
             $co = $this->conecta();
             $co->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            try{ 
             $sql="INSERT into directorsalon (idDirectorSalon, Correo, Nombre1, Nombre2, Apellido1, Apellido2)
                               values (:idDirectorSalon,:Correo,:Nombre1,:Nombre2,:Apellido1,:Apellido2)";
                              
@@ -36,9 +35,10 @@
             $query->bindParam(":Apellido1", $datos["Apellido1"], PDO::PARAM_STR);
             $query->bindParam(":Apellido2", $datos["Apellido2"], PDO::PARAM_STR);
             $query->execute();
-            return 'positivo';
             
-            }
+            try{
+                return "Ingresado correctamente al sistema";
+            }            
             catch(Exception $e) {
 				return $e->getMessage();
 			}
