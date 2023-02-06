@@ -37,7 +37,7 @@ $(document).ready(function(){
         }
 
         function insertarDatos(id){
-            console.log("entrando");
+            console.log("entrando a insertar datos");
             var dato = $('#frminsert').serialize();
             console.log(dato);/* pa saber si tomó los datos */
             $.ajax({
