@@ -4,7 +4,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="insertarModal">Agregar nuevo registro</h5>
+        <h5 class="modal-title" id="insertarModal1">Agregar nuevo registro</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -23,6 +23,7 @@
               <input type="text" id="Apellido1" name="Apellido1" class="form-control form-control-sm" required="">
               <label>Segundo Apellido</label>
               <input type="text" id="Apellido2" name="Apellido2" class="form-control form-control-sm" required="">
+              <input type="text" id="accion" name="accion" class="form-control form-control-sm" value="" style="display: none;">
               <br>
                <input type="submit" value="Guardar" class="btn btn-primary">
           </form>

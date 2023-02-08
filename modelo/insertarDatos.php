@@ -9,6 +9,8 @@
 
     require_once ("../modelo/Crud.php");
 
+
+
     $datos=array(
             'idDirectorSalon' => $_POST['idDirectorSalon'],
             'Correo' => $_POST['Correo'],
@@ -19,7 +21,27 @@
             );
 
             $registro=new Crud();
-            echo $registro->insertarDatos($datos);
+
+            $accion = $_POST['accion'];
+
+            if ($accion == 'incluir') {
+                // code...
+                echo $registro->insertarDatos($datos);
+
+            }
+            elseif ($accion == 'modificar') {
+                // code...
+                 echo $registro->modificarDatos($datos);
+            }
+
+
+        
+
+
+
+
+          
+
 
 
 ?>

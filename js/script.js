@@ -1,15 +1,18 @@
 $(document).ready(function(){
 
     mostrar();
-    
 
+    $("#incluir").click(function(event) {
+        /* Act on the event */
 
-
-
-
-
-
-
+        console.log("dksoaskd");
+        $('#insertarModal1').html('');
+        $('#insertarModal1').html('Agregar nuevo registro');
+        $('#accion').val('incluir');
+        $('#idDirectorSalon').prop({
+                'readonly': false
+            })
+    });
 
 
     });
@@ -24,29 +27,53 @@ $(document).ready(function(){
                 
             }).done(function(r){
                 console.log("3");
-                      console.log(r);
                        $('#tablaDatos').html(r);
             })
         }
         function modificarDatos(id){
             console.log("entrando a modificarDatos")
+            $('#insertarModal1').html('');
+            $('#insertarModal1').html('Modificar Datos');
+            $('#idDirectorSalon').prop({
+                'readonly': true
+            })
+            $('#accion').val('modificar');
+            $('#idDirectorSalon').val(id);
+            $('#frminsert').attr('onsubmit', 'return a()');
+        }
+
+        function a(){
+             var dato = $('#frminsert').serialize();
+            console.log(dato);/* pa saber si tomó los datos */
+
+             alert(dato);
             
             $.ajax({
                 async: true,
-                url:'./modelo/modificarDatos.php',
-                type: 'POST',
-                data:"id=" + id,
-                success:function(r){
-                    r= jQuery.parseJSON(r);
-                    $('#id').val(r['id']);
-                    $('#Correou').val(r['Correo']);
-                    $('#Nombre1u').val(r['Nombre1']);
-                    $('#Nombre2u').val(r['Nombre2']);
-                    $('#Apellido1u').val(r['Apellido1']);
-                    $('#Apellido2u').val(r['Apellido2']);
-                }
+                url:'./modelo/insertarDatos.php',
+                method: 'POST',
+                data:dato,
 
-            })
+                
+                success:function(re){
+                    console.log("entrando a success");
+                    alert(re);
+                    console.log(re);
+                    a = re;
+                    if (a === "positivo"){
+                       swal ("Error","No se ingreso correctamente","error");
+                    }
+                    else{
+                        console.log("entrando al else");
+                        $('#frminsert');//limpiar el formulario para otro registro
+                        mostrar();
+                        alert("si se agrego correctamente: ");
+                        swal("¡"+re+"!",":D","success");
+                    }        
+                }
+             });
+            console.log("saliendo de la function");
+            return false;  
 
         }
 
