@@ -26,6 +26,7 @@
                      <tbody>';
     $datosTabla="";
     foreach ($datos as $key => $value){
+        $a = $value['idDirectorSalon'];
         $datosTabla=$datosTabla.'    
                             <tr style="cursor:pointer">
                                 <td>'.$value['idDirectorSalon'].'</td>
@@ -34,8 +35,9 @@
                                 <td>'.$value['Correo'].'</td>
                                 <td>'.$value['Telefono'].'</td>
                                 <td>
-                                <a class="btn btn-success btn-sm"  data-toggle="modal" data-target="#modificarModal" onclick="modificarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-pen"></i></a>
-                                <a href="" class="btn btn-danger btn-sm" onclick="eliminarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-xmark"></i></a>
+
+                                <a class="btn btn-success btn-sm"  data-toggle="modal" data-target="#insertarModal" onclick=" modificarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-pen"></i></a>
+                                <a class="btn btn-danger btn-sm" onclick="eliminarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-xmark"></i></a>
                                 </td>
                                 
                                
