@@ -42,7 +42,7 @@
                 </div>
             </a>
             
-            <a href="?pagina=gestionpruebas">
+            <a href="?pagina=notificaciones">
                 <div class="option">
                     <i class="far fa-sticky-note" title="Notificaciones"></i>
                     <h4>Notificaciones</h4>
@@ -62,7 +62,7 @@
     
 <main>
 
-<h1>Titulo</h1>
+<h1>IN2404M</h1>
 
     <p> <h4>
     Bienvenido al Sistema de información y control para el proceso de datos del 

@@ -24,8 +24,8 @@
             $co = $this->conecta();
             $co->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql="INSERT into directorsalon (idDirectorSalon, Correo, Nombre1, Nombre2, Apellido1, Apellido2)
-                              values (:idDirectorSalon,:Correo,:Nombre1,:Nombre2,:Apellido1,:Apellido2)";
+            $sql="INSERT into directorsalon (idDirectorSalon, Correo, Nombre1, Nombre2, Apellido1, Apellido2, telefono)
+                              values (:idDirectorSalon,:Correo,:Nombre1,:Nombre2,:Apellido1,:Apellido2,:telefono)";
                              
             $query=Conexion::conecta()->prepare($sql);
             $query->bindParam(":idDirectorSalon", $datos["idDirectorSalon"], PDO::PARAM_STR);
@@ -34,6 +34,7 @@
             $query->bindParam(":Nombre2", $datos["Nombre2"], PDO::PARAM_STR);
             $query->bindParam(":Apellido1", $datos["Apellido1"], PDO::PARAM_STR);
             $query->bindParam(":Apellido2", $datos["Apellido2"], PDO::PARAM_STR);
+            $query->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
             $query->execute();
             
             try{
@@ -47,7 +48,7 @@
 
         public function modificarDatos($datos){
 
-             $co = $this->conecta();
+            $co = $this->conecta();
             $co->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             try{
 
@@ -62,6 +63,7 @@
                     Apellido1 = :Apellido1,
                     Apellido2 = :Apellido2,
                     Correo = :Correo
+                    telefono = :telefono
                     where 
                     idDirectorSalon = :idDirectorSalon
                     ");
@@ -72,6 +74,7 @@
             $query->bindParam(":Nombre2", $datos["Nombre2"], PDO::PARAM_STR);
             $query->bindParam(":Apellido1", $datos["Apellido1"], PDO::PARAM_STR);
             $query->bindParam(":Apellido2", $datos["Apellido2"], PDO::PARAM_STR);
+            $query->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
             $query->execute();
             
                 return "Datos  modificados correctamente";

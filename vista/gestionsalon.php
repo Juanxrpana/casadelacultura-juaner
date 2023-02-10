@@ -14,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     
-    <title>Gestion Encargados Salon</title>
+    <title>Gestion Salon</title>
     </head>
 
 <body id="body">
@@ -64,7 +64,7 @@
         <div class="botoneraencargado">
                     <div class="row">
                     <div class="col-5">
-                        <button class="btn btn-success" data-toggle="modal" data-target="#insertarModal" id="incluir" name="incluir"><i class="fas fa-plus-circle"></i> Nuevo registro </button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#insertarModalSalon" id="incluirSalon" name="incluirSalon"><i class="fas fa-plus-circle"></i> Nuevo Salon </button>
                     </div>
 
                     <div class="col-5">
@@ -91,14 +91,14 @@
     <hr>
 
     
-    <h2 class="textoecentrado">Lista de encargados de los salones</h2>
+    <h2 class="textoecentrado">Lista de salones</h2>
     
 
     <div class="modal-footer bg-light">
         <div class="col"></div>
     </div>
 
-    <div id="tablaDatos"></div>
+    <div id="tablaDatosSalon"></div>
 
 </div> <!-- fin de container -->
 

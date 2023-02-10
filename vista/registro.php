@@ -101,7 +101,7 @@
             <div class="body">
               <h5 class="text-secondary">Salon</h5>
               <p>Gestionar Salon</p>
-              <a href="?pagina=salon" class="btn btn-primary">Gestionar</a>
+              <a href="?pagina=gestionsalon" class="btn btn-primary">Gestionar</a>
             </div>
           </div>
         </div>

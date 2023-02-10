@@ -48,5 +48,3 @@
     echo $tabla.$datosTabla.'</tbody></table>';
 ?>
 
-<!-- //<span class="btn btn-success btn-sm" onclick="modificarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-pen"></i></a>
-                                    <a href="" class="btn btn-danger btn-sm" onclick="eliminarDatos('.$value['idDirectorSalon'].')"><i class="fa-solid fa-user-xmark"></i></a>// -->

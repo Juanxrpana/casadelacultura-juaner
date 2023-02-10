@@ -17,7 +17,8 @@
             'Nombre1' => $_POST['Nombre1'],
             'Nombre2' => $_POST['Nombre2'],
             'Apellido1' => $_POST['Apellido1'],
-            'Apellido2' => $_POST['Apellido2']
+            'Apellido2' => $_POST['Apellido2'],
+            'telefono' => $_POST['telefono']
             );
 
             $registro=new Crud();
