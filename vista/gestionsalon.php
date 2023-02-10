@@ -1,4 +1,4 @@
-<?php require_once ("./comunes/insertarModal.php")?>
+<?php require_once ("./comunes/ModalSalon.php")?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,7 @@
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
     
     <title>Gestion Salon</title>
@@ -64,7 +65,7 @@
         <div class="botoneraencargado">
                     <div class="row">
                     <div class="col-5">
-                        <button class="btn btn-success" data-toggle="modal" data-target="#insertarModalSalon" id="incluirSalon" name="incluirSalon"><i class="fas fa-plus-circle"></i> Nuevo Salon </button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#ModalSalon" id="incluirSalon" name="incluirSalon"><i class="fas fa-plus-circle"></i> Nuevo Salon </button>
                     </div>
 
                     <div class="col-5">
@@ -106,6 +107,7 @@
 
 </main>
     <script src="js/script.js"></script>
+    <script src="js/registro_salon.js"></script>
     <script src="js/sweetalert.min.js" ></script>
 
 </body>

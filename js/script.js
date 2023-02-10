@@ -16,7 +16,7 @@ $(document).ready(function(){
     });
 
 
-    });
+});
 
         function mostrar(){
                 /* console.log("1"); */

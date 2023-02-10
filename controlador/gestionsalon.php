@@ -31,10 +31,10 @@ require_once("modelo/".$pagina.".php");
             $o->set_idSalon($_POST['idSalon']);
             $o->set_NombreSalon($_POST['NombreSalon']);
             $o->set_CantidadPersonasSalon($_POST['CantidadPersonasSalon']);
-            $o->set_CantidadSillas($_POST['fechadenacimiento']);
+            $o->set_CantidadSillas($_POST['CantidadSillas']);
 
             if($accion=='incluir'){
-              echo  $o->incluir();
+              echo  $o->incluirsalon();
             }
             elseif($accion=='modificar'){
               echo  $o->modificar();

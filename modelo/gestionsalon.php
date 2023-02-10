@@ -63,11 +63,14 @@ class registro_salon extends Conexion{
         $this->CantidadSillas = $valor;
     }
 
+	
+	//Lo siguiente que demos hacer es crear los metodos para incluirsalon, consultar y eliminar
+
+	
+	
 
 
-	//Lo siguiente que demos hacer es crear los metodos para incluir, consultar y eliminar
-
-	function incluir(){
+	function incluirsalon(){
 		//Ok ya tenemos la base de datos y la funcion conecta dentro de la clase
 		//datos, ahora debemos ejecutar las operaciones para realizar las consultas
 
@@ -76,7 +79,7 @@ class registro_salon extends Conexion{
 		//que retorna true en caso de exitir el registro
 
 		if(!$this->existe($this->idSalon)){
-			//si estamos aca es porque la idSalon no existe es decir se puede incluir
+			//si estamos aca es porque la idSalon no existe es decir se puede incluirsalon
 			//los pasos a seguir son
 			//1 Se llama a la funcion conecta
 			$co = $this->conecta();
@@ -105,7 +108,7 @@ class registro_salon extends Conexion{
 		}
 
 		//Listo eso es todo y es igual para el resto de las operaciones
-		//incluir, modificar y eliminar
+		//incluirsalon, modificar y eliminar
 		//solo cambia para buscar
 	}
 
@@ -210,9 +213,26 @@ class registro_salon extends Conexion{
 
 	}
 
+	public function mostrarDatosSalon(){
+
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+	
+		$sql=$co->query("SELECT *from salon");
+	
+			return $sql;
+		  
+		}
 
 
 
 
 }
+
+
+
+
+        
+       
+
 ?>
