@@ -122,6 +122,11 @@
 </div>
 
 
+
+<div class="notificacion">
+    <p>Centro de notificaciones</p>  
+</div>
+
 </main>
     
 <script src="/js/script.js"></script>

@@ -128,6 +128,6 @@ $.ajax({
     
 }).done(function(r){
     console.log("3");
-           $('#tablaDatos').html(r);
+           $('#tablaDatosSalon').html(r);
 })
 }

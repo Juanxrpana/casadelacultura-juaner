@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!--Framework Boostrap-->
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <?php
+        require_once("comunes/head.php");
+        
+    ?>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <script src="js/jquery.min.js" ></script>
-    <script src="js/popper.min.js" ></script>
-    <script src="js/bootstrap.min.js" ></script>
+    
     <title>Principal</title>
     </head>
 <body id="body">
@@ -80,12 +78,13 @@
                 <li class="breadcrumb-item active">Registro</li>
               </ul>
             </nav>
-            <h1 class="text-center">Registrar</h1>
+            <h1 class="text-center">Registro de Actividades</h1>
           </div>
         </div>
       </div>
     </div>
 
+   
  </main>
 <script src="/js/script.js"></script>
 </body>

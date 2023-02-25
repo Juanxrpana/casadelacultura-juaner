@@ -1,18 +1,28 @@
-<?php require_once ("./comunes/ModalSalon.php")?>
+<?php require_once ("comunes/ModalSalon.php")?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--Framework Boostrap-->
+    
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+    <!-- Enlazar archivo CSS de Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
 
+        <!-- Enlazar archivo JS de jQuery -->
+        <script src="js/jquery.min.js"></script>
+
+        <!-- Enlazar archivo JS de Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ -->
 
     
     <title>Gestion Salon</title>
@@ -106,6 +116,9 @@
 
 
 </main>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script>
     <script src="js/script.js"></script>
     <script src="js/registro_salon.js"></script>
     <script src="js/sweetalert.min.js" ></script>

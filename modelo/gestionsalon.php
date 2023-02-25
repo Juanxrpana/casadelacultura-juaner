@@ -2,7 +2,7 @@
 //llamda al archivo que contiene la clase
 //datos, en ella posteriormente se colcora el codigo
 //para enlazar a su base de datos
-require_once('modelo/Conexion.php');
+require_once('Conexion.php');
 
 //declaracion de la clase usuarios que hereda de la clase datos
 //la herencia se declara con la palabra extends y no es mas
