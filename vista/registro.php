@@ -1,16 +1,8 @@
+<?php require_once("comunes/head.php");?>
+<?php require_once("comunes/barranotificacion.php")?>
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Framework Boostrap-->
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <script src="js/jquery.min.js" ></script>
-    <script src="js/popper.min.js" ></script>
-    <script src="js/bootstrap.min.js" ></script>
     <title>Principal</title>
     </head>
 <body id="body">
@@ -42,12 +34,12 @@
                 </div>
             </a>
             
-            <a href="#">
+            <div id="noti">
                 <div class="option">
                     <i class="far fa-sticky-note" title="Blog"></i>
                     <h4>Notificaciones</h4>
                 </div>
-            </a>
+            </div>
 
             <a href="#">
                 <div class="option">
@@ -123,12 +115,12 @@
 
 
 
-<div class="notificacion">
-    <p>Centro de notificaciones</p>  
-</div>
-
 </main>
-    
-<script src="/js/script.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script>
+    <script src="js/script.js"></script>
+    <script src="js/registro_salon.js"></script>
+    <script src="js/sweetalert.min.js" ></script>
 </body>
 </html>

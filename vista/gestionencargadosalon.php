@@ -1,25 +1,15 @@
 <?php require_once ("./comunes/insertarModal.php")?>
-
+<?php require_once("comunes/head.php")?>
+<?php require_once("comunes/barranotificacion.php")?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--Framework Boostrap-->
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js" ></script>
+    <head>  
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/popper.min.js" ></script>
-   
-    
     <title>Gestion Encargados Salon</title>
     </head>
 
 <body id="body">
 
-    <div class="menu__side">
+<div class="menu__side">
 
     <div class="name__page">
         <span class="bolded">SICIGA 2022</span>
@@ -41,12 +31,12 @@
                 </div>
             </a>
             
-            <a href="#">
+            <div id="noti">
                 <div class="option">
                     <i class="far fa-sticky-note" title="Blog"></i>
                     <h4>Notificaciones</h4>
                 </div>
-            </a>
+            </div>
 
             <a href="#">
                 <div class="option">
@@ -66,30 +56,27 @@
                     <div class="col-5">
                         <button class="btn btn-success" data-toggle="modal" data-target="#insertarModal" id="incluir" name="incluir"><i class="fas fa-plus-circle"></i> Nuevo registro </button>
                     </div>
-
                     <div class="col-5">
                         <a href="?pagina=registro" class="btn btn-secondary">REGRESAR</a>
                     </div>          
                     </div>
+         </div>
 
-                    </div>
+    </div>
 
-            </div>
-
-            <!-- linea abajo-->
-            <div class="row">
-            <div class="col">
+    <!-- linea abajo-->
+    <div class="row">
+        <div class="col">
             <hr/>
-            </div>
-            </div>
-
         </div>
+    </div>
+
+    </div>
 
         
     </form>
 
     <hr>
-
     
     <h2 class="textoecentrado">Lista de encargados de los salones</h2>
     
@@ -105,9 +92,11 @@
 
 
 </main>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script>
     <script src="js/script.js"></script>
+    <script src="js/registro_salon.js"></script>
     <script src="js/sweetalert.min.js" ></script>
-
 </body>
-
 </html>

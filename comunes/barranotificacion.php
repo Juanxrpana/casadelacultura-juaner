@@ -1,41 +1,61 @@
+<link rel="stylesheet" href="./css/notificacion.css">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<!-- <button id="noti">NOTIFICACION</button> -->
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<div class="notificacion" style="float: right; width: 350px;height: 100%; background: rgb(39, 39, 39);
-    color: whitesmoke">
-    <p class="titulonotificaciones" style="margin-left: 45px; margin-bottom: 10px; height: 20px;">Centro de notificaciones</p>  
-   
-    <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small>3 days ago</small>
-    </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small>And some small print.</small>
-  </a>
-  <a href="#" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small class="text-muted">3 days ago</small>
-    </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small class="text-muted">And some muted small print.</small>
-  </a>
-  <a href="#" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small class="text-muted">3 days ago</small>
-    </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small class="text-muted">And some muted small print.</small>
-  </a>
-</div>
-</div>
-    
- 
-   
+<div class="notificacion" id="notificacion">
+  <div class="titulo" style=" margin-left: 50px; color: white; margin-bottom: 30px;">Centro de notificaciones</div>
+  
+   <?php
 
-</div>
+      require_once ('./modelo/Conexion.php');
+      $conexion = new Conexion();
+      $pdo = $conexion->conecta();
 
+      // Define la consulta SQL para obtener las actividades
+      $sql = "SELECT * FROM actividad"; /* ORDER BY FechaActividad DESC"; */
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute();
+      $actividades = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      // Ejecuta la consulta y almacena el resultado en una variable
+      /* $resultado = mysqli_query($conecta, $sql); */
 
+     // Si hay al menos una fila de resultado
+    if (count($actividades) > 0) {
+  // Inicia la lista
+  echo '<ol class="list-group list-group-numbered">';
+        
+  // Recorre todas las filas de resultado
+  foreach ($actividades as $fila) {
+      // Crea un nuevo item de lista para cada fila
+      echo '<li class="list-group-item d-flex justify-content-between align-items-start">';
+            
+      // Muestra el nombre de la actividad como subheading
+      echo '<div class="ms-2 me-auto"><div class="fw-bold">'.$fila["NombreActividad"].'</div>';
+            
+      // Muestra la fecha de la actividad
+      echo $fila["FechaActividad"].'</div>';
+            
+      // Muestra la cantidad de participantes
+      echo '<span class="badge bg-primary rounded-pill">'.$fila["Participantes"].'</span>';
+            
+      // Cierra el item de lista
+      echo '</li>';
+  }
+        
+  // Cierra la lista
+  echo '</ol>';
+  } else {
+    // Si no hay resultados, muestra un mensaje
+    echo "No hay actividades registradas.";
+  }
+
+    // Cierra la conexión a la base de datos
+    $pdo = null;
+    ?>
+
+      
 </div>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/popper.min.js" ></script>
+<script src="js/bootstrap.min.js" ></script>
+<script src="./js/notificaciones.js"></script>

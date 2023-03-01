@@ -1,36 +1,15 @@
 <?php require_once ("comunes/ModalSalon.php")?>
-
+<?php require_once("comunes/head.php")?>
+<?php require_once("comunes/barranotificacion.php")?>
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="stylesheet" href="css/estilos.css">
-   
-    <!-- Enlazar archivo CSS de Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-
-        <!-- Enlazar archivo JS de jQuery -->
-        <script src="js/jquery.min.js"></script>
-
-        <!-- Enlazar archivo JS de Bootstrap -->
-        <script src="js/bootstrap.min.js"></script>
-
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-
-    
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
- -->
-
-    
+<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <title>Gestion Salon</title>
-    </head>
+</head>
 
 <body id="body">
 
-    <div class="menu__side">
+<div class="menu__side">
 
     <div class="name__page">
         <span class="bolded">SICIGA 2022</span>
@@ -52,12 +31,12 @@
                 </div>
             </a>
             
-            <a href="#">
+            <div id="noti">
                 <div class="option">
                     <i class="far fa-sticky-note" title="Blog"></i>
                     <h4>Notificaciones</h4>
                 </div>
-            </a>
+            </div>
 
             <a href="#">
                 <div class="option">

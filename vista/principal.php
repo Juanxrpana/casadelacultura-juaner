@@ -1,22 +1,13 @@
+<?php require_once("comunes/head.php");?>
+<?php require_once("comunes/barranotificacion.php")?>
 <!DOCTYPE html>
-<html lang="en">
 <head>
     
-    <!--Framework Boostrap-->
-    <?php
-        require_once("comunes/head.php");
-        
-    ?>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     
     <title>Principal</title>
     </head>
 <body id="body">
-
-    <header>
-        
-    </header>
-  
 
     <div class="menu__side" id="menu_side">
 
@@ -40,12 +31,12 @@
                 </div>
             </a>
             
-            <a href="?pagina=notificaciones">
+            <div id="noti">
                 <div class="option">
                     <i class="far fa-sticky-note" title="Notificaciones"></i>
                     <h4>Notificaciones</h4>
                 </div>
-            </a>
+            </div>
 
             <a href="#">
                 <div class="option">
@@ -86,6 +77,9 @@
 
    
  </main>
-<script src="/js/script.js"></script>
+<!-- <script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/popper.min.js" ></script>
+<script src="js/bootstrap.min.js" ></script> -->
+<!-- <script src="js/script.js"></script> -->
 </body>
 </html>
