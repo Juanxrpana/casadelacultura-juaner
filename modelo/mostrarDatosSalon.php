@@ -3,7 +3,7 @@
     
     if (!is_file("../modelo/gestionsalon.php")){
 
-        echo "Falta definir la clase registro_salon";
+        echo "Falta definir la clase gestionsalon";
         exit;
     }
 

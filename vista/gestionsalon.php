@@ -1,6 +1,7 @@
 <?php require_once ("comunes/ModalSalon.php")?>
 <?php require_once("comunes/head.php")?>
 <?php require_once("comunes/barranotificacion.php")?>
+
 <!DOCTYPE html>
 <head>
 <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
@@ -98,7 +99,6 @@
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/popper.min.js" ></script>
     <script src="js/bootstrap.min.js" ></script>
-    <script src="js/script.js"></script>
     <script src="js/registro_salon.js"></script>
     <script src="js/sweetalert.min.js" ></script>
 
