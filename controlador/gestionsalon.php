@@ -33,7 +33,7 @@ require_once("modelo/".$pagina.".php");
             $o->set_CantidadPersonasSalon($_POST['CantidadPersonasSalon']);
             $o->set_CantidadSillas($_POST['CantidadSillas']);
 
-            if($accion=='incluir'){
+            if($accion=='insertar'){
               echo  $o->incluirsalon();
             }
             elseif($accion=='modificar'){

@@ -10,7 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-          <form id="frminsertsalon" onsubmit="return incluirsalon()" method="post">
+          <form id="frminsertsalon" onsubmit="return incluirsalon()" method="POST">
               <label>Numero del salon</label>
               <input type="text" id="idSalon" name="idSalon" class="form-control form-control-sm" >
               <label>Nombredel salon</label>
@@ -26,7 +26,7 @@
           </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button id="incluir2" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         
       </div>
     </div>

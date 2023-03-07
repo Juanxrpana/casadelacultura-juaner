@@ -46,21 +46,22 @@ class registro_salon extends Conexion{
 
 	//ahora la misma cosa pero para leer, es decir get
 
-	function get_idSalon($valor){
-		$this->idSalon = $valor; //fijencen como se accede a los elementos dentro de una clase
+
+	function get_idSalon(){//fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
-	}
+        return $this->idSalon;
+    }
 
-	function get_NombreSalon($valor){
-		$this->NombreSalon = $valor;
-	}
+    function get_NombreSalon(){
+        return $this->NombreSalon;
+    }
 
-	function get_CantidadPersonasSalon($valor){
-		$this->CantidadPersonasSalon = $valor;
-	}
+    function get_CantidadPersonasSalon(){
+        return $this->CantidadPersonasSalon;
+    }
 
-	function get_CantidadSillas($valor){
-        $this->CantidadSillas = $valor;
+    function get_CantidadSillas(){
+        return $this->CantidadSillas;
     }
 
 	
@@ -71,47 +72,32 @@ class registro_salon extends Conexion{
 
 
 	function incluirsalon(){
-		//Ok ya tenemos la base de datos y la funcion conecta dentro de la clase
-		//datos, ahora debemos ejecutar las operaciones para realizar las consultas
-
-		//Lo primero que debemos hacer es consultar por el campo clave
-		//en este caso la idSalon, para ello se creo la funcion existe
-		//que retorna true en caso de exitir el registro
-
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		if(!$this->existe($this->idSalon)){
-			//si estamos aca es porque la idSalon no existe es decir se puede incluirsalon
-			//los pasos a seguir son
-			//1 Se llama a la funcion conecta
-			$co = $this->conecta();
-			$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//2 Se ejecuta el sql
-			try {
-					$co->query("Insert into salon(
-						idSalon,
-                        NombreSalon,
-                        CantidadPersonasSalon,
-                        CantidadSillas)
-						Values(
-						'$this->idSalon',
-                        '$this->NombreSalon',
-                        '$this->CantidadPersonasSalon',
-                        '$this->CantidadSillas'
-						
-                        )");
-						return "Registro incluido";
-			} catch(Exception $e) {
-				return $e->getMessage();
-			}
+		  try {
+			$co->query("Insert into salon(
+			  idSalon,
+			  NombreSalon,
+			  CantidadPersonasSalon,
+			  CantidadSillas)
+			  VALUES(
+			  '$this->idSalon',
+			  '$this->NombreSalon',
+			  '$this->CantidadPersonasSalon',
+			  '$this->CantidadSillas'
+			)");
+			$response = array('message' => 'Registro incluido');
+			echo json_encode($response);
+
+		  } catch(Exception $e) {
+			return json_encode(array("status" => "error", "message" => $e->getMessage()));
+		  }
 		}
 		else{
-			return "Ya existe la idSalon que desea ingresar";
+		  return json_encode(array("status" => "error", "message" => "Ya existe la idSalon que desea ingresar"));
 		}
-
-		//Listo eso es todo y es igual para el resto de las operaciones
-		//incluirsalon, modificar y eliminar
-		//solo cambia para buscar
-	}
-
+	  }
 	function modificar(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -158,7 +144,7 @@ class registro_salon extends Conexion{
 
 	
 
-	private function existe($idSalon){
+	public function existe($idSalon){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
@@ -182,37 +168,6 @@ class registro_salon extends Conexion{
 		}
 	}
 
-	function consultatr(){
-		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		try{
-
-			$resultado = $co->query("Select * from salon where idSalon='$this->idSalon'");
-			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
-			if($fila){
-
-				$envia = array('resultado'=>"encontro");
-
-				$envia += $fila;
-
-				return json_encode($envia);
-
-			}
-			else{
-
-				$envia = array('resultado'=>"noencontro");
-				return json_encode($envia);
-
-
-			}
-
-		}catch(Exception $e){
-			$envia = array('resultado'=>$e->getMessage());
-			return json_encode($envia);
-		}
-
-	}
-
 	public function mostrarDatosSalon(){
 
 		$co = $this->conecta();
@@ -228,11 +183,4 @@ class registro_salon extends Conexion{
 
 
 }
-
-
-
-
-        
-       
-
 ?>

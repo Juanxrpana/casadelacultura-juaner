@@ -29,7 +29,7 @@
                             <tr style="cursor:pointer">
                                 <td>'.$value['idSalon'].'</td>
                                 <td>'.$value['NombreSalon'].'</td>
-                                <td>'.$value['CantidadSalon'].'</td>
+                                <td>'.$value['CantidadPersonasSalon'].'</td>
                                 <td>'.$value['CantidadSillas'].'</td>
                               
                                 <td>
