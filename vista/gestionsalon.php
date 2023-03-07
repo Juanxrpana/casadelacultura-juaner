@@ -96,10 +96,11 @@
 
 
 </main>
+
     <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/registro_salon.js"></script>
     <script src="js/popper.min.js" ></script>
     <script src="js/bootstrap.min.js" ></script>
-    <script src="js/registro_salon.js"></script>
     <script src="js/sweetalert.min.js" ></script>
 
 </body>
