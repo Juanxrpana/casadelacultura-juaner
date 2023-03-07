@@ -9,7 +9,7 @@ $(document).ready(function() {
         event.preventDefault();
         console.log("insertar1")
         enviarAjax();
-        mostrarDatosSalon();
+
 
 
 
@@ -25,8 +25,28 @@ $(document).ready(function() {
             url: '',
             async: true,
             data: datos,
-            success: function(data) {
+            success: function(data, response) {
                 console.log(data);
+                mostrarDatosSalon();
+                $('input').val('');
+                a = response;
+                if (a === "done") {
+                    swal({
+                        title: "Hay un error",
+                        text: "Algo esta mal, vuelve a chequear la conexion",
+                        icon: "waring",
+                        button: "Salir",
+                    });
+
+                } else {
+                    swal({
+                        title: "Registrado",
+                        text: "Ahora puedes encontrarlo en el registro",
+                        icon: "error",
+                        button: "Salir",
+                    });
+                }
+
             },
             error: function(error) {
                 console.log(error);
@@ -51,7 +71,7 @@ $(document).ready(function() {
 });
 
 $("#modificar").on("click", function() {
-    confirmar();
+
 
     $('#si').on('click', function() {
 

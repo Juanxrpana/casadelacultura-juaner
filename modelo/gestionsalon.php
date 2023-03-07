@@ -87,7 +87,7 @@ class registro_salon extends Conexion{
 			  '$this->CantidadPersonasSalon',
 			  '$this->CantidadSillas'
 			)");
-			$response = array('message' => 'Registro incluido');
+			$response = array('message' => 'done');
 			echo json_encode($response);
 
 		  } catch(Exception $e) {
