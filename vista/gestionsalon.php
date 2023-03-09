@@ -2,8 +2,14 @@
 <?php require_once("comunes/head.php")?>
 <?php require_once("comunes/barranotificacion.php")?>
 
+
+
+
 <!DOCTYPE html>
 <head>
+
+
+
 <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <title>Gestion Salon</title>
 </head>
@@ -13,7 +19,7 @@
 <div class="menu__side">
 
     <div class="name__page">
-        <span class="bolded">SICIGA 2022</span>
+        <span class="bolded"></span>
         </div>
         
         <div class="opciones__menu">

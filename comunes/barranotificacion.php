@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="./css/notificacion.css">
 <link rel="stylesheet" href="./css/bootstrap.min.css">
-<!-- <button id="noti">NOTIFICACION</button> -->
+
 
 <div class="notificacion" id="notificacion">
   <div class="titulo" style=" margin-left: 50px; color: white; margin-bottom: 30px;">Centro de notificaciones</div>

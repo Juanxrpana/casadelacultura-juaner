@@ -1,18 +1,22 @@
-<?php require_once ("./comunes/insertarModal.php")?>
+<?php require_once ("comunes/ModalSalon.php")?>
 <?php require_once("comunes/head.php")?>
 <?php require_once("comunes/barranotificacion.php")?>
+
+
+
+
 <!DOCTYPE html>
-    <head>  
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <title>Gestion Encargados Salon</title>
-    </head>
+<head>
+<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <title>Gestion Actividad</title>
+</head>
 
 <body id="body">
 
 <div class="menu__side">
 
     <div class="name__page">
-        <span class="bolded">SICIGA 2022</span>
+        <span class="bolded"></span>
         </div>
         
         <div class="opciones__menu">
@@ -54,49 +58,54 @@
         <div class="botoneraencargado">
                     <div class="row">
                     <div class="col-5">
-                        <button class="btn btn-success" data-toggle="modal" data-target="#insertarModal" id="incluir" name="incluir"><i class="fas fa-plus-circle"></i> Nuevo registro </button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#ModalActividad" id="incluirActividad" name="incluirActividad"><i class="fas fa-plus-circle"></i> Nueva Actividad </button>
                     </div>
+
                     <div class="col-5">
                         <a href="?pagina=registro" class="btn btn-secondary">REGRESAR</a>
                     </div>          
                     </div>
-         </div>
 
-    </div>
+                    </div>
 
-    <!-- linea abajo-->
-    <div class="row">
-        <div class="col">
+            </div>
+
+            <!-- linea abajo-->
+            <div class="row">
+            <div class="col">
             <hr/>
-        </div>
-    </div>
+            </div>
+            </div>
 
-    </div>
+        </div>
 
         
     </form>
 
     <hr>
+
     
-    <h2 class="textoecentrado">Lista de encargados de los salones</h2>
+    <h2 class="textoecentrado">Lista de Actividades</h2>
     
 
     <div class="modal-footer bg-light">
         <div class="col"></div>
     </div>
 
-    <div id="tablaDatos"></div>
+    <div id="tablaDatosActividad"></div>
 
 </div> <!-- fin de container -->
 
 
 
 </main>
+
     <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/registro_actividad.js"></script>
     <script src="js/popper.min.js" ></script>
     <script src="js/bootstrap.min.js" ></script>
-    <script src="js/script.js"></script>
-    <script src="js/registro_salon.js"></script>
     <script src="js/sweetalert.min.js" ></script>
+
 </body>
+
 </html>

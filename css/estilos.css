@@ -52,7 +52,7 @@ main {
 .menu__side {
     width: 245px;
     height: 100%;
-    background: rgb(36, 31, 31);
+    background: #1b2845;
     position: fixed;
     top: 0px;
     color: white;
@@ -62,7 +62,8 @@ main {
 
 .bannerfoto {
     height: 200px;
-    color: #645F88;
+    background-color: #7e94af8a;
+    color: #1b2845;
     border-radius: 30px;
     z-index: 0;
 }
@@ -71,8 +72,7 @@ main {
     position: relative;
     margin-bottom: 16px;
     height: 200px;
-    background-color: #F6F5FC;
-    color: #645F88;
+    color: #7e94af;
     border-radius: 30px;
     z-index: 0;
 }

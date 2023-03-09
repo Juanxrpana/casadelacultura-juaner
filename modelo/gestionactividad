@@ -10,7 +10,7 @@ require_once('Conexion.php');
 //que decirle a esta clase que puede usar los mismos metodos
 //que estan en la clase de dodne hereda (La padre) como sir fueran de el
 
-class registro_salon extends Conexion{
+class registro_actividad extends Conexion{
 	//el primer paso dentro de la clase
 	//sera declarar los atributos (variables) que describen la clase
 	//para nostros no es mas que colcoar los inputs (controles) de
@@ -18,75 +18,57 @@ class registro_salon extends Conexion{
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 
-    private $idSalon;
-	private $NombreSalon; //recuerden que en php, las variables no tienen tipo predefinido
-	private $CantidadPersonasSalon;
-	private $CantidadSillas;
+    private $idactividad;
+	private $Nombreactividad; //recuerden que en php, las variables no tienen tipo predefinido
+	
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 
-	function set_idSalon($valor){
-		$this->idSalon = $valor; //fijencen como se accede a los elementos dentro de una clase
+	function set_idactividad($valor){
+		$this->idactividad = $valor; //fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
 	}
 
-	function set_NombreSalon($valor){
-		$this->NombreSalon = $valor;
+	function set_Nombreactividad($valor){
+		$this->Nombreactividad = $valor;
 	}
-
-	function set_CantidadPersonasSalon($valor){
-		$this->CantidadPersonasSalon = $valor;
-	}
-
-	function set_CantidadSillas($valor){
-        $this->CantidadSillas = $valor;
-    }
 
 	
 
 	//ahora la misma cosa pero para leer, es decir get
 
 
-	function get_idSalon(){//fijencen como se accede a los elementos dentro de una clase
+	function get_idactividad(){//fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
-        return $this->idSalon;
+        return $this->idactividad;
     }
 
-    function get_NombreSalon(){
-        return $this->NombreSalon;
+    function get_Nombreactividad(){
+        return $this->Nombreactividad;
     }
 
-    function get_CantidadPersonasSalon(){
-        return $this->CantidadPersonasSalon;
-    }
-
-    function get_CantidadSillas(){
-        return $this->CantidadSillas;
-    }
-
-	
-	//Lo siguiente que demos hacer es crear los metodos para incluirsalon, consultar y eliminar
+    	
+	//Lo siguiente que demos hacer es crear los metodos para incluiractividad, consultar y eliminar
 
 	
 	
 
 
-	function incluirsalon(){
+	function incluiractividad(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		if(!$this->existe($this->idSalon)){
+		if(!$this->existe($this->idactividad)){
 		  try {
-			$co->query("Insert into salon(
-			  idSalon,
-			  NombreSalon,
-			  CantidadPersonasSalon,
+			$co->query("Insert into actividad(
+			  idactividad,
+			  Nombreactividad,
+			  CantidadPersonasactividad,
 			  CantidadSillas)
 			  VALUES(
-			  '$this->idSalon',
-			  '$this->NombreSalon',
-			  '$this->CantidadPersonasSalon',
-			  '$this->CantidadSillas'
+			  '$this->idactividad',
+			  '$this->Nombreactividad',
+			  
 			)");
 			$response = array('message' => 'done');
 			echo json_encode($response);
@@ -96,7 +78,7 @@ class registro_salon extends Conexion{
 		  }
 		}
 		else{
-		  return json_encode(array("status" => "error", "message" => "Ya existe la idSalon que desea ingresar"));
+		  return json_encode(array("status" => "error", "message" => "Ya existe la idactividad que desea ingresar"));
 		}
 	  }
 
@@ -104,23 +86,22 @@ class registro_salon extends Conexion{
 	function modificarDatos(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		if($this->existe($this->idSalon)){
+		if($this->existe($this->idactividad)){
 			try {
-					$co->query("Update salon set
-					    idSalon = '$this->idSalon',
-                        NombreSalon = '$this->NombreSalon',
-                        CantidadPersonasSalon = '$this->CantidadPersonasSalon',
-                        CantidadSillas = '$this->CantidadSillas'
+					$co->query("Update actividad set
+					    idactividad = '$this->idactividad',
+                        Nombreactividad = '$this->Nombreactividad',
+                        
 						where
-						idSalon = '$this->idSalon'
+						idactividad = '$this->idactividad'
 						");
-						return "Salon Modificado";
+						return "actividad Modificado";
 			} catch(Exception $e) {
 				return json_encode(array("status" => "error", "message" => $e->getMessage()));
 			}
 		}
 		else{
-			return json_encode(array("status" => "error", "message" => "idSalon que desea ingresar no se encuentra registrada"));
+			return json_encode(array("status" => "error", "message" => "idactividad que desea ingresar no se encuentra registrada"));
 		}
 
 	}
@@ -128,28 +109,28 @@ class registro_salon extends Conexion{
 	function eliminarDatos(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		if($this->existe($this->idSalon)){
+		if($this->existe($this->idactividad)){
 			try {
-					$co->query("delete from salon
+					$co->query("delete from actividad
 						where
-						idSalon = '$this->idSalon'
+						idactividad = '$this->idactividad'
 						");
-						return "Salon Eliminado";
+						return "actividad Eliminado";
 			} catch(Exception $e) {
 				return $e->getMessage();
 			}
 		}
 		else{
-			return "idSalon no registrada";
+			return "idactividad no registrada";
 		}
 	}
 
-	public function existe($idSalon){
+	public function existe($idactividad){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 
-			$resultado = $co->query("Select * from salon where idSalon='$idSalon'");
+			$resultado = $co->query("Select * from actividad where idactividad='$idactividad'");
 
 
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);
@@ -168,12 +149,12 @@ class registro_salon extends Conexion{
 		}
 	}
 
-	public function mostrarDatosSalon(){
+	public function mostrarDatosactividad(){
 
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	
-		$sql=$co->query("SELECT *from salon");
+		$sql=$co->query("SELECT *from actividad");
 	
 			return $sql;
 		  

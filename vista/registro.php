@@ -15,7 +15,7 @@
     <div class="menu__side">
 
     <div class="name__page">
-        <span class="bolded">SICIGA 2022</span>
+        <span class="bolded"></span>
         </div>
         
         <div class="opciones__menu">

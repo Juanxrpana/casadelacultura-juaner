@@ -12,7 +12,7 @@
     <div class="menu__side" id="menu_side">
 
     <div class="name__page">
-        <span class="bolded">SICIGA 2022</span>
+        <span class="bolded"></span>
         </div>
         
         <div class="opciones__menu">
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <a href="#">
+            <a href="?pagina=login">
                 <div class="option">
                     <i class="far fa-address-card" title="Usuario"></i>
                     <h4>Usuario</h4>

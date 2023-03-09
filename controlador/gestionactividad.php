@@ -19,8 +19,8 @@ require_once("modelo/".$pagina.".php");
 	  //por lo que lo primero que debemos hace es //realizar una instancia de la clase
 	  //instanciar es crear una variable local, //que contiene los metodos de la clase
 	  //para poderlos usar
-      $o = new registro_salon(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
-	  //clase registro_salon
+      $o = new registro_actividad(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
+	  //clase registro_actividad
       if(!empty($_POST)){
 
         //como ya sabemos si estamos aca es //porque se recibio alguna informacion
@@ -35,20 +35,18 @@ require_once("modelo/".$pagina.".php");
           $accion = $_POST['accion'];
 
             if($accion=='eliminar'){
-            $o->set_idSalon($_POST['idSalon']);
+            $o->set_idactividad($_POST['idactividad']);
             echo  $o->eliminarDatos();}       
             
             else{
-              $o->set_idSalon($_POST['idSalon']);
-              $o->set_NombreSalon($_POST['NombreSalon']);
-              $o->set_CantidadPersonasSalon($_POST['CantidadPersonasSalon']);
-              $o->set_CantidadSillas($_POST['CantidadSillas']);
+              $o->set_idactividad($_POST['idactividad']);
+              $o->set_Nombreactividad($_POST['Nombreactividad']);
 
               if($accion=='insertar'){
-                echo  $o->incluirsalon();
+                echo  $o->incluirActividadctividad();
               }
               elseif($accion=='modificar'){
-                echo  $o->modificarDatos();
+                echo  $o->modificarActividad();
               }   
               }
                   

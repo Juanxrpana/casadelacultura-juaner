@@ -7,6 +7,6 @@
  require_once("vista/".$pagina.".php"); 
  }
  else{
- echo "pagina en construccion";
+ echo "pagina principal en construccion";
  }
 ?>
