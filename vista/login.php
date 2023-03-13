@@ -18,6 +18,14 @@
   </ul>
 </div>
 
+<div id="mensajes" style="display:none">
+          <?php
+            if(!empty($mensaje)){
+              echo $mensaje;
+            }
+          ?>  
+          </div>
+
   </section>
 
   <section class="derecha">

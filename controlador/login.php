@@ -22,15 +22,17 @@
       //$o->set_fechacreado($_POST['fechacreado']);
      
       $arrayUser = $o->busca();
+
+      $arrayUser;
       $mensaje = $arrayUser[0][0];
       
       if (!isset($arrayuser)) {
         // code...
-       $IdUsuario = $arrayUser[0][1];
+       $IdUsuario = $arrayUser[0][0];
       }
     
     
-      if($mensaje == "Administrador" or $mensaje=="Usuario"){
+      if($mensaje == "121212" or $mensaje=="Usuario"){
       session_start();
       $_SESSION['nivel'] = $arrayUser;
 

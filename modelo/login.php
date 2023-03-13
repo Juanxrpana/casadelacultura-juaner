@@ -60,8 +60,8 @@ class login extends Conexion{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 		
-			$resultado = $co->prepare("SELECT privilegio, IdUsuario, Usuario FROM user WHERE 
-			cedula=:IdUsuario AND clave=:clave");
+			$resultado = $co->prepare("SELECT IdUsuario FROM user WHERE 
+			IdUsuario=:Usuario AND clave=:clave");
 			
 			$resultado->bindParam(':Usuario',$this->IdUsuario);
 			$resultado->bindParam(':clave',$this->clave);
