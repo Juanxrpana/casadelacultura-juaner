@@ -19,7 +19,7 @@
 <div class="menu__side">
 
     <div class="name__page">
-        <span class="bolded"></span>
+        <span class="bolded"><img src="./img/Recurso3.png" alt="" style="width: 180;"></span>
         </div>
         
         <div class="opciones__menu">

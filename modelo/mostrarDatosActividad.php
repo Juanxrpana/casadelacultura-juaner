@@ -2,41 +2,41 @@
 <?php
 
     
-    if (!is_file("../modelo/gestionsalon.php")){
+    if (!is_file("../modelo/gestionactividad.php")){
 
-        echo "Falta definir la clase gestionsalon";
+        echo "Falta definir la clase gestionactividad";
         exit;
     }
 
-    require_once ("../modelo/gestionsalon.php");
-    $obj= new registro_salon();
-    $datos=$obj->mostrarDatosSalon();
+    require_once ("../modelo/gestionactividad.php");
+    $obj= new registro_actividad();
+    $datos=$obj->mostraractividad();
 
-    $tablasalon='<table class="table table-striped table-hover">
+    $tablaactividad='<table class="table table-striped table-hover">
                      <thead>
                              <tr>
-                                <th scope="col">Numero de salon</th>
-                                <th scope="col">Nombre del salon</th>
-                                <th scope="col">Cantidad de personas por salon</th>
-                                <th scope="col">Cantidad de sillas por salon</th>
+                                <th scope="col">Numero de Actividad</th>
+                                <th scope="col">Nombre de la Actividad</th>
+                                <th scope="col">Fecha de la Actividad</th>
+                                <th scope="col">Encargado de la Actividad</th>
                                 <th scope="col"></th>
                             </tr>
                      </thead>
                      <tbody>';
-    $datosTablasalon="";
+    $datosTablaactividad="";
     foreach ($datos as $key => $value){
-        $a = $value['idSalon'];
-        $datosTablasalon=$datosTablasalon.'  
+        $a = $value['idActividad'];
+        $datosTablaactividad=$datosTablaactividad.'  
                             <tr style="cursor:pointer">
-                                <td>'.$value['idSalon'].'</td>
-                                <td>'.$value['NombreSalon'].'</td>
-                                <td>'.$value['CantidadPersonasSalon'].'</td>
-                                <td>'.$value['CantidadSillas'].'</td>
+                                <td>'.$value['idActividad'].'</td>
+                                <td>'.$value['NombreActividad'].'</td>
+                                <td>'.$value['FechaActividad'].'</td>
+                                <td>'.$value['Nombre1' . 'Apellido1'].'</td>
                               
                                 <td>
 
-                                <a id="modify" class="btn btn-success btn-sm" data-toggle="modal" data-target="#ModalSalon" data-id="'.$value['idSalon'].'"onclick="modificarDatos('.$value['idSalon'].')"><i class="fa-solid fa-user-pen"></i></a>
-                                <a class="btn btn-danger btn-sm" data-id="'.$value['idSalon'].'" onclick="eliminarDatos('.$value['idSalon'].')"><i class="fa-solid fa-user-xmark"></i></a>
+                                <a id="modify" class="btn btn-success btn-sm" data-toggle="modal" data-target="#ModalActividad" data-id="'.$value['idActividad'].'"onclick="modificarDatos('.$value['idActividad'].')"><i class="fa-solid fa-user-pen"></i></a>
+                                <a class="btn btn-danger btn-sm" data-id="'.$value['idActividad'].'" onclick="eliminarActividad('.$value['idActividad'].')"><i class="fa-solid fa-user-xmark"></i></a>
 
                                 </td>
                                 
@@ -45,6 +45,6 @@
                             </tr>';
 
     }
-    echo $tablasalon.$datosTablasalon.'</tbody></table>';
+    echo $tablaactividad.$datosTablaactividad.'</tbody></table>';
 ?>
 

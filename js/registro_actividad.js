@@ -1,26 +1,26 @@
-function mostrarDatosSalon() {
-    console.log("entrando mostrando data salon");
+function mostrarDatosActividad() {
+    console.log("entrando mostrando data Actividad");
 
     $.ajax({
-        url: 'modelo/mostrarDatosSalon.php'
+        url: 'modelo/mostrarDatosActividad.php'
 
     }).done(function(r) {
-        console.log("Mostrando data salon satisfactoriamente");
-        $('#tablaDatosSalon').html(r);
+        console.log("Mostrando data Actividad satisfactoriamente");
+        $('#tablaDatosActividad').html(r);
     })
 }
 
-function modificarDatos(id) {
+function modificarDatosActividad(id) {
 
-    console.log("entrando a modificar datos con ajax");
-    $('#Modalsalon1').html('');
-    $('#Modalsalon1').html('Modificar Datos');
-    $('#idSalon').prop({
+    console.log("entrando a modificar datos Actividad con ajax");
+    $('#ModalActividad1').html('');
+    $('#ModalActividad1').html('Modificar Datos Actividad');
+    $('#idActividad').prop({
         'readonly': true
     })
     $('#accion').val('modificar');
     console.log($("#accion").val());
-    $('#idSalon').val(id);
+    $('#idActividad').val(id);
     /* ModificarAjax(); */
 
 }
@@ -29,7 +29,7 @@ function modificarDatos(id) {
 
 function ModificarAjax() {
 
-    var datos = $('#frminsertsalon').serialize();
+    var datos = $('#frminsertActividad').serialize();
     console.log(datos); /* pa saber si tomó los datos */
 
     $.ajax({
@@ -59,7 +59,7 @@ function ModificarAjax() {
                     icon: "success",
                     button: "Salir",
                 });
-                mostrarDatosSalon();
+                mostrarDatosActividad();
                 $('input').val('');
                 $('#accion').val('insertar');
                 console.log($("#accion").val());
@@ -75,7 +75,7 @@ function ModificarAjax() {
 
 }
 
-function eliminarDatos(idSalon) {
+function eliminarDatos(idActividad) {
 
 
 
@@ -94,14 +94,14 @@ function eliminarDatos(idSalon) {
             if (willDelete) {
 
                 console.log("entrando a eliminar datos con ajax");
-                console.log("id de salon : " + idSalon);
+                console.log("id de Actividad : " + idActividad);
                 // Hacer una petición AJAX para llamar al método eliminarDatos() del modelo
                 $.ajax({
                     url: "",
                     type: "POST",
                     data: {
                         accion: "eliminar",
-                        idSalon: idSalon
+                        idActividad: idActividad
                     },
                     success: function(response) {
 
@@ -109,7 +109,7 @@ function eliminarDatos(idSalon) {
 
                         console.log(response);
                         // Recargar la página o actualizar los datos en la vista
-                        mostrarDatosSalon();
+                        mostrarDatosActividad();
                     },
                     error: function(xhr, status, error) {
                         swal("Advertencia", "Ha ocurrido un error al eliminar el salón.", "warning");
@@ -123,38 +123,6 @@ function eliminarDatos(idSalon) {
         });
 
 
-    /* console.log("entrando a eliminar datos con ajax");
-     console.log("id de salon : "+idSalon);
-     // Hacer una petición AJAX para llamar al método eliminarDatos() del modelo
-     $.ajax({
-         url: "",
-         type: "POST",
-         data: { accion: "eliminar",
-             idSalon: idSalon },
-         success: function(response) {
-
-             swal("¡Hecho!",response,"success");
-
-             console.log(response);
-             // Recargar la página o actualizar los datos en la vista
-             mostrarDatosSalon();
-         },
-         error: function(xhr, status, error) {
-             swal("Advertencia","Ha ocurrido un error al eliminar el salón.", "warning");
-         }
-       });*/
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -163,15 +131,15 @@ function eliminarDatos(idSalon) {
 $(document).ready(function() {
 
     //primer mostrar tabla
-    mostrarDatosSalon();
+    mostrarDatosActividad();
     console.log($("#accion").val());
 
 
 
-    $("#incluir2").on("click", function(event) {
+    $("#incluir3").on("click", function(event) {
         event.preventDefault();
-        console.log("insertar salon en la BD");
-        enviarAjax();
+        console.log("insertar Actividad en la BD");
+        enviarActividadAjax();
 
     });
 
@@ -180,9 +148,9 @@ $(document).ready(function() {
 
 
 
-    function enviarAjax() {
+    function enviarActividadAjax() {
 
-        var datos = $('#frminsertsalon').serialize();
+        var datos = $('#frminsertActividad').serialize();
         console.log(datos); /* pa saber si tomó los datos */
 
         $.ajax({
@@ -208,11 +176,11 @@ $(document).ready(function() {
 
                     swal({
                         title: "Registrado",
-                        text: "Ahora puedes encontrarlo en el registro",
+                        text: "Ahora puedes encontrar la Actividad en el registro",
                         icon: "success",
                         button: "Salir",
                     });
-                    mostrarDatosSalon();
+                    mostrarDatosActividad();
                     $('input').val('');
                     $('#accion').val('insertar');
                     console.log($("#accion").val());
