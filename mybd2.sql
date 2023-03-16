@@ -103,13 +103,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Actividad` (
   `Telefono` INT NULL,/* listo *//* validado */
   `HoraCierre` TIME NULL,/* listo *//* validado */
   
-  `Salon_idSalon` INT NOT NULL,
+  /* `Salon_idSalon` INT NOT NULL,
   `IndoleActividad_idIndoleActividad` INT NOT NULL,
   `RequisitosActividad_idRequisitosActividad` INT NOT NULL,
   `TipoActividad_idTipoActividad` INT NOT NULL,
   `FocusActividad_idFocusActividad` INT NOT NULL,
-  `user_IdUsuario` INT NOT NULL,
-  PRIMARY KEY (`idActividad`, `Salon_idSalon`, `IndoleActividad_idIndoleActividad`, `RequisitosActividad_idRequisitosActividad`, `TipoActividad_idTipoActividad`, `FocusActividad_idFocusActividad`, `user_IdUsuario`),
+  `user_IdUsuario` INT NOT NULL, */
+  PRIMARY KEY (`idActividad`))/*, 
   INDEX `fk_Actividad_Salon1_idx` (`Salon_idSalon` ASC),
   INDEX `fk_Actividad_IndoleActividad1_idx` (`IndoleActividad_idIndoleActividad` ASC),
   INDEX `fk_Actividad_RequisitosActividad1_idx` (`RequisitosActividad_idRequisitosActividad` ASC),
@@ -118,22 +118,34 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Actividad` (
   INDEX `fk_Actividad_user1_idx` (`user_IdUsuario` ASC),
   CONSTRAINT `fk_Actividad_Salon1`
     FOREIGN KEY (`Salon_idSalon`)
-    REFERENCES `mydb`.`Salon` (`idSalon`),
+    REFERENCES `mydb`.`Salon` (`idSalon`)
+     ON DELETE CASCADE
+     ON UPDATE CASCADE,
   CONSTRAINT `fk_Actividad_IndoleActividad1`
     FOREIGN KEY (`IndoleActividad_idIndoleActividad`)
-    REFERENCES `mydb`.`IndoleActividad` (`idIndoleActividad`),
+    REFERENCES `mydb`.`IndoleActividad` (`idIndoleActividad`)
+     ON DELETE CASCADE
+     ON UPDATE CASCADE,
   CONSTRAINT `fk_Actividad_RequisitosActividad1`
     FOREIGN KEY (`RequisitosActividad_idRequisitosActividad`)
-    REFERENCES `mydb`.`RequisitosActividad` (`idRequisitosActividad`),
+    REFERENCES `mydb`.`RequisitosActividad` (`idRequisitosActividad`)
+     ON DELETE CASCADE
+     ON UPDATE CASCADE,
   CONSTRAINT `fk_Actividad_TipoActividad1`
     FOREIGN KEY (`TipoActividad_idTipoActividad`)
-    REFERENCES `mydb`.`TipoActividad` (`idTipoActividad`),
+    REFERENCES `mydb`.`TipoActividad` (`idTipoActividad`)
+     ON DELETE CASCADE
+     ON UPDATE CASCADE,
   CONSTRAINT `fk_Actividad_FocusActividad1`
     FOREIGN KEY (`FocusActividad_idFocusActividad`)
-    REFERENCES `mydb`.`FocusActividad` (`idFocusActividad`),
+    REFERENCES `mydb`.`FocusActividad` (`idFocusActividad`)
+     ON DELETE CASCADE
+        ON UPDATE CASCADE,
   CONSTRAINT `fk_Actividad_user1`
     FOREIGN KEY (`user_IdUsuario`)
-    REFERENCES `mydb`.`user` (`IdUsuario`))
+    REFERENCES `mydb`.`user` (`IdUsuario`)
+     ON DELETE CASCADE
+        ON UPDATE CASCADE) */
 ENGINE = InnoDB;
 
 

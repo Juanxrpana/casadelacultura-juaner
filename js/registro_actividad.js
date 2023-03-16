@@ -8,12 +8,12 @@ const expresiones = {
     Participantes: /^[0-9\b-]*$/,
     CantidadEncuentros: /^[0-9\b-]*$/,
     HoraInicio: /^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/,
-    Cedula: /^[0-9\b-]*$/,
+    Cedula: /^[0-9\b-]{7,9}$/,
     Nombre1: /^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
     Nombre2: /^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
     Apellido1: /^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
     Apellido2: /^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{3,30}$/,
-    Telefono: /^[0-9]{4}[-]{1}[0-9]{7,8}$/,
+    Telefono: /^[0-9]{4}[0-9]{7,8}$/,
     HoraCierre: /^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/,
 }
 
@@ -33,6 +33,8 @@ const validarcampo = (expresion, input, campo) => {
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-circle-check');
         document.querySelector(`#grupo__${campo} .formulario__ipnut-error`).classList.add('formulario__ipnut-error-activo');
     }
+    document.querySelector(`#grupo__${campo} i`).classList.remove('fa-xmark');
+    document.querySelector(`#grupo__${campo} i`).classList.remove('fa-circle-check');
 
 }
 
@@ -132,8 +134,29 @@ formulario.addEventListener('click', (e) => {
 
 function datosSalon() {
 
-    $.get("/clase3/modelo/gestionactividad.php", function($salonj, status) {
-        alert("Data: " + $salonj + "\nStatus: " + status);
+    $.ajax({
+        url: 'modelo/obtensalon.php',
+        type: 'GET',
+        dataType: "json",
+        success: function(salones_json) {
+            console.log(salones_json);
+            salones = salones_json;
+
+            //creo q si es así
+            let selectSalones = document.getElementById("li-idsalon");
+            let options = "";
+
+            //con el arreglo salones, inserto en una lista para el modal
+            for (let i = 0; i < salones.length; i++) {
+                let salon = salones[i];
+                options += "<option value='" + salon.idSalon + "'>" + salon.idSalon + "</option>";
+            }
+
+            selectSalones.innerHTML = options;
+        },
+        error: function() {
+            console.log('Hubo un error en la solicitud');
+        }
     });
 
 }
@@ -161,7 +184,7 @@ function modificarDatosActividad(id) {
     $('#accion').val('modificar');
     //console.log($("#accion").val());
     $('#idActividad').val(id);
-    /* ModificarAjax(); */
+    /* ModificarAjax; */
 
 }
 

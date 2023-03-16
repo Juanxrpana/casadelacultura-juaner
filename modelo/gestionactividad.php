@@ -171,11 +171,8 @@ class registro_actividad extends Conexion{
 		$sql=$co->prepare("SELECT idSalon, NombreSalon FROM salon");
 		$sql->execute();
 		$salones = $sql->fetchAll(PDO::FETCH_ASSOC);
-		$salonj = json_encode($salones);
 		
-		echo $salonj;
-		
-		return $salonj;
+		return $salones;
 	}
 
 

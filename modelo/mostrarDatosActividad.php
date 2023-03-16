@@ -18,7 +18,6 @@
                                 <th scope="col">Numero de Actividad</th>
                                 <th scope="col">Nombre de la Actividad</th>
                                 <th scope="col">Fecha de la Actividad</th>
-                                <th scope="col">Encargado de la Actividad</th>
                                 <th scope="col"></th>
                             </tr>
                      </thead>
@@ -31,7 +30,7 @@
                                 <td>'.$value['idActividad'].'</td>
                                 <td>'.$value['NombreActividad'].'</td>
                                 <td>'.$value['FechaActividad'].'</td>
-                                <td>'.$value['Nombre1' . 'Apellido1'].'</td>
+                                
                               
                                 <td>
 

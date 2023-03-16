@@ -253,72 +253,71 @@ function eliminarDatos(idSalon) {
 
 $(document).ready(function() {
 
-//primer mostrar tabla
-mostrarDatosSalon();
-/* console.log($("#accion").val()); */
+    //primer mostrar tabla
+    mostrarDatosSalon();
+    /* console.log($("#accion").val()); */
 
 
 
-$("#incluir2").on("click", function(event) {
-    event.preventDefault();
-    console.log("insertar salon en la BD");
-    enviarAjax();
-
-});
-
-
-
-
-
-
-function enviarAjax() {
-
-    var datos = $('#frminsertsalon').serialize();
-    console.log(datos); /* pa saber si tomó los datos */
-
-    $.ajax({
-        type: 'POST',
-        url: '',
-        async: true,
-        data: datos,
-        success: function(data, response) {
-            console.log("entrando a insertar con Ajax");
-            console.log(data);
-
-
-            a = response;
-            if (a === "done") {
-                swal({
-                    title: "Hay un error",
-                    text: "Algo esta mal, vuelve a chequear la conexion",
-                    icon: "waring",
-                    button: "Salir",
-                });
-
-            } else {
-
-                swal({
-                    title: "Registrado",
-                    text: "Ahora puedes encontrarlo en el registro",
-                    icon: "success",
-                    button: "Salir",
-                });
-                mostrarDatosSalon();
-                $('input').val('');
-                $('#accion').val('insertar');
-                console.log($("#accion").val());
-            }
-
-        },
-        error: function(error) {
-            console.log(error);
-        }
-
+    $("#incluir2").on("click", function(event) {
+        event.preventDefault();
+        console.log("insertar salon en la BD");
+        enviarAjax();
 
     });
 
-}
 
 
-});
+
+
+
+    function enviarAjax() {
+
+        var datos = $('#frminsertsalon').serialize();
+        console.log(datos); /* pa saber si tomó los datos */
+
+        $.ajax({
+            type: 'POST',
+            url: '',
+            async: true,
+            data: datos,
+            success: function(data, response) {
+                console.log("entrando a insertar con Ajax");
+                console.log(data);
+
+
+                a = response;
+                if (a === "done") {
+                    swal({
+                        title: "Hay un error",
+                        text: "Algo esta mal, vuelve a chequear la conexion",
+                        icon: "waring",
+                        button: "Salir",
+                    });
+
+                } else {
+
+                    swal({
+                        title: "Registrado",
+                        text: "Ahora puedes encontrarlo en el registro",
+                        icon: "success",
+                        button: "Salir",
+                    });
+                    mostrarDatosSalon();
+                    $('input').val('');
+                    $('#accion').val('insertar');
+                    console.log($("#accion").val());
+                }
+
+            },
+            error: function(error) {
+                console.log(error);
+            }
+
+
+        });
+
+    }
+
+
 });

@@ -11,8 +11,8 @@
       </div>
       <div class="modal-body">
           <form id="frminsertActividad" class="formulario" action="" method="POST">
-              <!-- <label>Numero de la Actividad</label>
-              <input type="text" id="idActividad" name="idActividad" class="form-control form-control-sm" > ESTO ES AUTO INCREMENTABLE wtf-->
+              <label>Numero de la Actividad</label>
+              <input type="text" id="idActividad" name="idActividad" class="form-control form-control-sm" >
              
               <!-- grupo Nombre de actividad -->
               <div class="formulario__grupo"  id="grupo__NombreActividad">
@@ -74,6 +74,16 @@
                 <p class="formulario__ipnut-error">La Hora no debe estar vacia</p>
               </div> 
 
+              <!-- Salon donde será la actividad -->
+              <div class="formulario__grupo"  id="grupo__idsalon">
+              <label for="idsalon" class="formulario__label">Salon  de la Actividad</label>
+                <div class="formulario__grupo-input">
+                  <select class="form-control" id="li-idsalon"></select>                  
+                  <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario__ipnut-error">Debe escoger 1 salon</p>
+              </div> 
+
               <!-- Cédula encargado  -->
               <div class="formulario__grupo"  id="grupo__Cedula">
               <label for="Cedula" class="formulario__label">Cedula del encargado de la Actividad</label>
@@ -81,7 +91,7 @@
                   <input type="text" id="Cedula" name="Cedula" class="form-control form-control-sm form__input">
                   <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
                 </div>
-                <p class="formulario__ipnut-error">La Hora no debe estar vacia</p>
+                <p class="formulario__ipnut-error">La Cédula no debe estar vacia</p>
               </div> 
 
                <!-- grupo Nombre encargado -->

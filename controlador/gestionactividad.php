@@ -35,13 +35,24 @@ require_once("modelo/".$pagina.".php");
           $accion = $_POST['accion'];
 
             if($accion=='eliminar'){
-            $o->set_idactividad($_POST['idactividad']);
+            $o->set_idActividad($_POST['idActividad']);
             echo  $o->eliminaractividad();}       
             
             else{
-              $o->set_idactividad($_POST['idactividad']);
-              $o->set_Nombreactividad($_POST['Nombreactividad']);
-
+              $o->set_idActividad($_POST['idActividad']);
+              $o->set_Estatus($_POST['Estatus']);
+              $o->set_NombreActividad($_POST['NombreActividad']);
+              $o->set_FechaActividad($_POST['FechaActividad']);
+              $o->set_Participantes($_POST['Participantes']);
+              $o->set_CantidadEncuentros($_POST['CantidadEncuentros']);
+              $o->set_HoraInicio($_POST['HoraInicio']);
+              $o->set_Cedula($_POST['Cedula']);
+              $o->set_Nombre1($_POST['Nombre1']);
+              $o->set_Nombre2($_POST['Nombre2']);
+              $o->set_Apellido1($_POST['Apellido1']);
+              $o->set_Apellido2($_POST['Apellido2']);
+              $o->set_Telefono($_POST['Telefono']);
+              $o->set_HoraCierre($_POST['HoraCierre']);
               if($accion=='insertar'){
                 echo  $o->incluiractividad();
               }
@@ -49,8 +60,6 @@ require_once("modelo/".$pagina.".php");
                 echo  $o->modificaractividad();
               }   
               }
-                  
-            
         }
         exit;
     }    require_once("vista/".$pagina.".php");
