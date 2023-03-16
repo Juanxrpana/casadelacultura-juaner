@@ -2,14 +2,11 @@
 <?php require_once("comunes/head.php")?>
 <?php require_once("comunes/barranotificacion.php")?>
 
-
-
-
 <!DOCTYPE html>
 <head>
 
 
-
+<link rel="stylesheet" href="./css/formvalid.css">
 <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <title>Gestion Salon</title>
 </head>
@@ -57,19 +54,14 @@
     </div>
 <main>
 
+
 <div class="container"> 
         <div class="botoneraencargado">
-                    <div class="row">
-                    <div class="col-5">
-                        <button class="btn btn-success" data-toggle="modal" data-target="#ModalSalon" id="incluirSalon" name="incluirSalon"><i class="fas fa-plus-circle"></i> Nuevo Salon </button>
-                    </div>
+                  
+                        <button class="btn btn-success btn-block" data-toggle="modal" data-target="#ModalSalon" id="incluirSalon" name="incluirSalon"><i class="fas fa-plus-circle"></i> Nuevo Salon </button>
+                   
 
-                    <div class="col-5">
-                        <a href="?pagina=registro" class="btn btn-secondary">REGRESAR</a>
-                    </div>          
-                    </div>
-
-                    </div>
+                    </diWv>
 
             </div>
 

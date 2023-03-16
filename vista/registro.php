@@ -73,19 +73,7 @@
     <div class="page-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4">
-          <div class="card-service">
-            <div class="header">
-              <img src="img/services/service-2.svg" alt="">
-            </div>
-            <div class="body">
-              <h5 class="text-secondary">Director de Salon</h5>
-              <p>Gestionar director de Salon</p>
-              <a href="?pagina=gestionencargadosalon" class="btn btn-primary">Gestionar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
+        <div class="offset-2 col-lg-4">
           <div class="card-service">
             <div class="header">
               <img src="img/services/service-1.svg" alt="">

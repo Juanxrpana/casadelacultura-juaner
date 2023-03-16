@@ -7,6 +7,7 @@
 
 <!DOCTYPE html>
 <head>
+<link rel="stylesheet" href="./css/formvalid.css">
 <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <title>Gestion Actividad</title>
 </head>
@@ -56,17 +57,11 @@
 
 <div class="container"> 
         <div class="botoneraencargado">
-                    <div class="row">
-                    <div class="col-5">
-                        <button class="btn btn-success" data-toggle="modal" data-target="#ModalActividad" id="incluirActividad" name="incluirActividad"><i class="fas fa-plus-circle"></i> Nueva Actividad </button>
-                    </div>
-
-                    <div class="col-5">
-                        <a href="?pagina=registro" class="btn btn-secondary">REGRESAR</a>
-                    </div>          
-                    </div>
-
-                    </div>
+                   
+                        <button class="btn btn-success btn-block" data-toggle="modal" data-target="#ModalActividad" id="incluirActividad" name="incluirActividad"><i class="fas fa-plus-circle"></i> Nueva Actividad </button>
+                    
+                    
+                    </div>     
 
             </div>
 

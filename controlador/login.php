@@ -17,11 +17,13 @@
       $o = new login();
       
       $o->set_IdUsuario($_POST['IdUsuario']);
-      //$o->set_Usuario($_POST['Usuario']);
+     //$o->set_privilegio($_POST['privilegio']);
       $o->set_clave($_POST['clave']);
       //$o->set_fechacreado($_POST['fechacreado']);
-     
+      
       $arrayUser = $o->busca();
+
+      $arrayUser;
       $mensaje = $arrayUser[0][0];
       
       if (!isset($arrayuser)) {
@@ -29,15 +31,15 @@
        $IdUsuario = $arrayUser[0][1];
       }
     
-    
-      if($mensaje == "Administrador" or $mensaje=="Usuario"){
+    //                PRIVILEGIO           IdUsuario
+      if($mensaje=="admin" or $mensaje=='user'){
       session_start();
       $_SESSION['nivel'] = $arrayUser;
 
       header("Location: .?pagina=principal");
       }
       else{
-        $mensaje = "Usuario o clave invalida";
+        $mensaje = "Usuario o clave errados";
       }
       
     }

@@ -22,6 +22,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`user` (
   `IdUsuario` INT NOT NULL,
+  `privilegio` VARCHAR(10) NOT NULL,
   `Usuario` VARCHAR(16) NOT NULL,
   `clave` VARCHAR(32) NOT NULL,
   `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
@@ -34,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`user` (
 CREATE TABLE IF NOT EXISTS `mydb`.`Salon` (
   `idSalon` INT NOT NULL,
   `NombreSalon` VARCHAR(45) NULL,
-  `CantidadSalon` INT NULL,
+  `CantidadPersonasSalon` INT NULL,
   `CantidadSillas` INT NULL,
   `Nombredirector` VARCHAR(45) NULL,
   `Nombredirector2` VARCHAR(45) NULL,
@@ -87,18 +88,21 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Actividad`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Actividad` (
-  `idActividad` INT NOT NULL,
-  `NombreActividad` VARCHAR(45) NULL,
-  `FechaActividad` DATETIME NULL,
-  `Participantes` INT NULL,
-  `CantidadEncuentros` INT NULL,
-  `HoraInicio` DATETIME NULL,
-  `Nombre1` VARCHAR(45) NULL,
-  `Nombre2` VARCHAR(45) NULL,
-  `Apellido1` VARCHAR(45) NULL,
-  `Apellido2` VARCHAR(45) NULL,
-  `Telefono` INT NULL,
-  `HoraCierre` DATETIME NULL,
+  `idActividad` INT NOT NULL, /* listo */
+  `Estatus` VARCHAR(10) NULL,/* validado */
+  `NombreActividad` VARCHAR(45) NULL,/* listo *//* validado */
+  `FechaActividad` DATE NULL,/* listo *//* validado */
+  `Participantes` INT NULL,/* listo *//* validado */
+  `CantidadEncuentros` INT NULL, /* listo *//* validado */
+  `HoraInicio` TIME NULL,/* listo */ /*Validado*/
+  `Cedula` INT NOT NULL,/* listo *//* validado */
+  `Nombre1` VARCHAR(45) NULL,/* listo *//* validado */
+  `Nombre2` VARCHAR(45) NULL,/* listo *//* validado */
+  `Apellido1` VARCHAR(45) NULL,/* listo *//* validado */
+  `Apellido2` VARCHAR(45) NULL,/* listo *//* validado */
+  `Telefono` INT NULL,/* listo *//* validado */
+  `HoraCierre` TIME NULL,/* listo *//* validado */
+  
   `Salon_idSalon` INT NOT NULL,
   `IndoleActividad_idIndoleActividad` INT NOT NULL,
   `RequisitosActividad_idRequisitosActividad` INT NOT NULL,

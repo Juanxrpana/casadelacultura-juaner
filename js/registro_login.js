@@ -1,4 +1,4 @@
-$(document).ready(function() {    mensajemodal();
+$(document).ready(function() {   
 
     //Seccion para mostrar lo enviado en el modal mensaje//
 
@@ -10,7 +10,6 @@ $(document).ready(function() {    mensajemodal();
 
 
     $("#iniciar").on("click", function() {
-        alert("alo2");
         if (validarboton()) {
             $("#accion_inicio_sesion").val("usuario");
             $("#f").submit();
@@ -20,15 +19,17 @@ $(document).ready(function() {    mensajemodal();
 
 });
 
+
+
 //console.log("aisdioj");
 
 
 function mensajemodal(mensaje) {
 
     swal({
-        title: "jejeboy",
-        text: "mensaje",
-        icon: "success",
+        title: "ALERTA",
+        text: mensaje,
+        icon: "warning",
         button: "Salir",
     });
 }

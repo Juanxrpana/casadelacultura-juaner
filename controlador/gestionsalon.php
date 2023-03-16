@@ -39,10 +39,15 @@ require_once("modelo/".$pagina.".php");
             echo  $o->eliminarDatos();}       
             
             else{
+              
               $o->set_idSalon($_POST['idSalon']);
               $o->set_NombreSalon($_POST['NombreSalon']);
               $o->set_CantidadPersonasSalon($_POST['CantidadPersonasSalon']);
               $o->set_CantidadSillas($_POST['CantidadSillas']);
+              $o->set_Nombredirector($_POST['Nombredirector']);
+              $o->set_Nombredirector2($_POST['Nombredirector2']);
+              $o->set_Apellidodirector($_POST['Apellidodirector']);
+              $o->set_Apellidodirector2($_POST['Apellidodirector2']);
 
               if($accion=='insertar'){
                 echo  $o->incluirsalon();

@@ -19,11 +19,13 @@ class registro_actividad extends Conexion{
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 
     private $idActividad;
+	private $Estatus;
 	private $NombreActividad; //recuerden que en php, las variables no tienen tipo predefinido
 	private $FechaActividad;
 	private $Participantes;
 	private $CantidadEncuentros;
 	private $HoraInicio;
+	private $Cedula;
 	private $Nombre1;
 	private $Nombre2;
 	private $Apellido1;
@@ -38,6 +40,10 @@ class registro_actividad extends Conexion{
 	function set_idActividad($valor){
 		$this->idActividad = $valor; //fijencen como se accede a los elementos dentro de una clase
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
+	}
+
+	function set_Estatus($valor){
+		$this->Estatus = $valor;
 	}
 
 	function set_NombreActividad($valor){
@@ -58,6 +64,10 @@ class registro_actividad extends Conexion{
 	
 	function set_HoraInicio($valor){
 		$this->HoraInicio = $valor;
+	}
+
+	function set_Cedula($valor){
+		$this->Cedula = $valor;
 	}
 
 	function set_Nombre1($valor){
@@ -98,6 +108,10 @@ class registro_actividad extends Conexion{
 		//this que singnifica esto es decir esta clase luego -> simbolo que indica que apunte
 	}
 
+	function get_Estatus($valor){
+		$this->Estatus = $valor;
+	}
+
 	function get_NombreActividad($valor){
 		$this->NombreActividad = $valor;
 	}
@@ -116,6 +130,10 @@ class registro_actividad extends Conexion{
 	
 	function get_HoraInicio($valor){
 		$this->HoraInicio = $valor;
+	}
+
+	function get_Cedula($valor){
+		$this->Cedula = $valor;
 	}
 
 	function get_Nombre1($valor){
@@ -147,6 +165,18 @@ class registro_actividad extends Conexion{
 
 	
 	
+	public function consultaSalon(){
+		$co = $this->conecta();
+		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql=$co->prepare("SELECT idSalon, NombreSalon FROM salon");
+		$sql->execute();
+		$salones = $sql->fetchAll(PDO::FETCH_ASSOC);
+		$salonj = json_encode($salones);
+		
+		echo $salonj;
+		
+		return $salonj;
+	}
 
 
 	function incluiractividad(){
@@ -154,13 +184,15 @@ class registro_actividad extends Conexion{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		if(!$this->existe($this->idActividad)){
 		  try {
-			$co->query("Insert into actividad(
+			$co->query("INSERT INTO actividad(
 			  idActividad,
+			  Estatus,
 			  NombreActividad,
 			  FechaActividad,
 			  Participantes,
 			  CantidadEncuentros,
 			  HoraInicio,
+			  Cedula,
 			  Nombre1,
 			  Nombre2,
 			  Apellido1,
@@ -169,11 +201,13 @@ class registro_actividad extends Conexion{
 			  HoraCierre)
 			  VALUES(
 			  '$this->idActividad',
+			  '$this->Estatus',
 			  '$this->NombreActividad',
 			  '$this->FechaActividad',
 			  '$this->Participantes',
 			  '$this->CantidadEncuentros',
 			  '$this->HoraInicio',
+			  '$this->Cedula',
 			  '$this->Nombre1',
 			  '$this->Nombre2',
 			  '$this->Apellido1',
@@ -202,6 +236,7 @@ class registro_actividad extends Conexion{
 			try {
 					$co->query("Update actividad set
 					    idActividad = '$this->idActividad',
+						Estatus = '$this->Estatus',
                         NombreActividad = '$this->NombreActividad',
                         FechaActividad =  '$this->FechaActividad', 
 						Participantes = '$this->Participantes',
@@ -272,6 +307,7 @@ class registro_actividad extends Conexion{
 
 	public function mostraractividad(){
 
+		
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	

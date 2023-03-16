@@ -22,7 +22,10 @@ class registro_salon extends Conexion{
 	private $NombreSalon; //recuerden que en php, las variables no tienen tipo predefinido
 	private $CantidadPersonasSalon;
 	private $CantidadSillas;
-	
+	private $Nombredirector;
+	private $Nombredirector2;
+	private $Apellidodirector;
+	private $Apellidodirector2;
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 
@@ -43,7 +46,26 @@ class registro_salon extends Conexion{
         $this->CantidadSillas = $valor;
     }
 
-	
+	function set_Nombredirector($valor){
+		$this->Nombredirector = $valor;
+	}
+
+	function set_Nombredirector2($valor){
+		$this->Nombredirector2 = $valor;
+	}
+
+	function set_Apellidodirector($valor){
+		$this->Apellidodirector = $valor;
+	}
+
+	function set_Apellidodirector2($valor){
+		$this->Apellidodirector2 = $valor;
+	}
+
+		
+		
+		
+		
 
 	//ahora la misma cosa pero para leer, es decir get
 
@@ -64,8 +86,25 @@ class registro_salon extends Conexion{
     function get_CantidadSillas(){
         return $this->CantidadSillas;
     }
-
 	
+	function get_Nombredirector(){
+        return $this->Nombredirector;
+    }
+
+	function get_Nombredirector2(){
+        return $this->Nombredirector2;
+    }
+
+	function get_Apellidodirector(){
+        return $this->Apellidodirector;
+    }
+
+	function get_Apellidodirector2(){
+        return $this->Apellidodirector2;
+    }
+
+
+
 	//Lo siguiente que demos hacer es crear los metodos para incluirsalon, consultar y eliminar
 
 	
@@ -77,17 +116,24 @@ class registro_salon extends Conexion{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		if(!$this->existe($this->idSalon)){
 		  try {
-			$co->query("Insert into salon(
+			$co->query("INSERT INTO salon(
 			  idSalon,
 			  NombreSalon,
 			  CantidadPersonasSalon,
-			  CantidadSillas)
+			  CantidadSillas,
+			  Nombredirector,
+			  Nombredirector2,
+			  Apellidodirector,
+			  Apellidodirector2)
 			  VALUES(
 			  '$this->idSalon',
 			  '$this->NombreSalon',
 			  '$this->CantidadPersonasSalon',
-			  '$this->CantidadSillas'
-			)");
+			  '$this->CantidadSillas',
+			  '$this->Nombredirector',
+			  '$this->Nombredirector2',
+			  '$this->Apellidodirector',
+			  '$this->Apellidodirector2')");
 			$response = array('message' => 'done');
 			echo json_encode($response);
 
@@ -110,7 +156,11 @@ class registro_salon extends Conexion{
 					    idSalon = '$this->idSalon',
                         NombreSalon = '$this->NombreSalon',
                         CantidadPersonasSalon = '$this->CantidadPersonasSalon',
-                        CantidadSillas = '$this->CantidadSillas'
+                        CantidadSillas = '$this->CantidadSillas',
+						Nombredirector= '$this->Nombredirector',
+						Nombredirector2= '$this->Nombredirector2',
+						Apellidodirector= '$this->Apellidodirector',
+						Apellidodirector2= '$this->Apellidodirector2',
 						where
 						idSalon = '$this->idSalon'
 						");
