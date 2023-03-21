@@ -46,12 +46,8 @@ require_once("modelo/".$pagina.".php");
               $o->set_Participantes($_POST['Participantes']);
               $o->set_CantidadEncuentros($_POST['CantidadEncuentros']);
               $o->set_HoraInicio($_POST['HoraInicio']);
-              $o->set_Cedula($_POST['Cedula']);
-              $o->set_Nombre1($_POST['Nombre1']);
-              $o->set_Nombre2($_POST['Nombre2']);
-              $o->set_Apellido1($_POST['Apellido1']);
-              $o->set_Apellido2($_POST['Apellido2']);
-              $o->set_Telefono($_POST['Telefono']);
+              $o->set_li_idsalon($_POST['li-idsalon']);
+              $o->set_Rid($_POST['Rid']);
               $o->set_HoraCierre($_POST['HoraCierre']);
               if($accion=='insertar'){
                 echo  $o->incluiractividad();

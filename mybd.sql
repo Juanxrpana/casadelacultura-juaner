@@ -102,14 +102,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Actividad` (
   `Apellido2` VARCHAR(45) NULL,/* listo *//* validado */
   `Telefono` INT NULL,/* listo *//* validado */
   `HoraCierre` TIME NULL,/* listo *//* validado */
-  
   `Salon_idSalon` INT NOT NULL,
   `IndoleActividad_idIndoleActividad` INT NOT NULL,
   `RequisitosActividad_idRequisitosActividad` INT NOT NULL,
   `TipoActividad_idTipoActividad` INT NOT NULL,
   `FocusActividad_idFocusActividad` INT NOT NULL,
   `user_IdUsuario` INT NOT NULL,
-  PRIMARY KEY (`idActividad`, `Salon_idSalon`, `IndoleActividad_idIndoleActividad`, `RequisitosActividad_idRequisitosActividad`, `TipoActividad_idTipoActividad`, `FocusActividad_idFocusActividad`, `user_IdUsuario`),
+  PRIMARY KEY (`idActividad`),
   INDEX `fk_Actividad_Salon1_idx` (`Salon_idSalon` ASC),
   INDEX `fk_Actividad_IndoleActividad1_idx` (`IndoleActividad_idIndoleActividad` ASC),
   INDEX `fk_Actividad_RequisitosActividad1_idx` (`RequisitosActividad_idRequisitosActividad` ASC),
