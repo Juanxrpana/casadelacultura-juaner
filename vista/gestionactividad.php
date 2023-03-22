@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <head>
 <link rel="stylesheet" href="./css/formvalid.css">
-<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <title>Gestion Actividad</title>
 </head>
 

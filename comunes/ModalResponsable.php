@@ -28,8 +28,14 @@
                <div class="formulario__grupo"  id="grupo__idNacionalidad">
               <label for="RidNacionalidad" class="formulario__label">Nacionalidad del Responsable</label>
                 <div class="formulario__grupo-input">
-                  <input type="text" id="idNacionalidad" name="idNacionalidad" class="form-control form-control-sm form__input" placeholder="V o E">
-                  <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+
+                 
+                 <select class="form-control" id="idNacionalidad" name="idNacionalidad" class="form-control form-control-sm form__input"> <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+                    <option disabled selected value="">Seleccionar Opcion</option>
+                  <option value="V">Venezolano</option>
+                  <option value="E">Extranjero</option>
+                 </select>
+    
                 </div>
                 <p class="formulario__ipnut-error"></p>
               </div> 
