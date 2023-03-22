@@ -32,12 +32,12 @@ require_once("../modelo/gestionresponsable.php");
          
 
             if($accion=='eliminar'){
-            $o->set_Rid($_POST['Rid']);
+            $o->set_RCedula($_POST['RCedula']);
             echo  $o->eliminarresponsable();}       
             
             else{
               
-              $o->set_Rid($_POST['Rid']);
+              $o->set_RCedula($_POST['RCedula']);
               $o->set_Nombre1($_POST['Nombre1']);
               $o->set_Nombre2($_POST['Nombre2']);
               $o->set_Apellido1($_POST['Apellido1']);

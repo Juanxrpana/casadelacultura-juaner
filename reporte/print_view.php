@@ -14,12 +14,22 @@
     
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>PDF</title>
+
+    <style>
+        body {
+            background-image: url("<?= $base64 ?>");
+            background-size: 842px 1191px;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,8 +38,8 @@
 
 
 <div>
-<img style="z-index: 1;" src="<?= $base64 ?>">
-    <table style="border-collapse: collapse; z-index: 10;">
+
+    <table style="border-collapse: collapse; z-index: 10;margin-top: 24%;">
         <thead>
             <tr>
                 <th style="text-align: center; border: 2px solid black";>Actividad</th>

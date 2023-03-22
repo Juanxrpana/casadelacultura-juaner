@@ -19,7 +19,7 @@ class registro_responsable extends Conexion{
 	//cada atributo debe ser privado, es decir, ser visible solo dentro de la
 	//misma clase, la forma de colcoarlo privado es usando la palabra private
 
-	private $Rid;
+	private $RCedula;
 	private $Nombre1;
 	private $Nombre2;
 	private $Apellido1;
@@ -30,8 +30,8 @@ class registro_responsable extends Conexion{
 	//por lo que debemos colcoar metodos (funciones) que me permitan leer (get) y colocar (set)
 
 	
-	function set_Rid($valor){
-		$this->Rid = $valor;
+	function set_RCedula($valor){
+		$this->RCedula = $valor;
 	}
 
 	function set_Nombre1($valor){
@@ -62,8 +62,8 @@ class registro_responsable extends Conexion{
 
 	//ahora la misma cosa pero para leer, es decir get
 
-	function get_Rid($valor){
-		$this->Rid = $valor;
+	function get_RCedula($valor){
+		$this->RCedula = $valor;
 	}
 
 	function get_Nombre1($valor){
@@ -97,10 +97,10 @@ class registro_responsable extends Conexion{
 	function incluirresponsable(){
 		$co1 = $this->conecta();
 		$co1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		if(!$this->existe($this->Rid)){
+		if(!$this->existe($this->RCedula)){
 		  try {
 			$co1->query("INSERT INTO responsable(
-			Rid, 
+			RCedula, 
 			Nombre1,
 			Nombre2, 
 			Apellido1, 
@@ -108,7 +108,7 @@ class registro_responsable extends Conexion{
 			Telefono, 
 			Nacionalidad_idNacionalidad) 
 			VALUES(
-			  '$this->Rid',
+			  '$this->RCedula',
 			  '$this->Nombre1',
 			  '$this->Nombre2',
 			  '$this->Apellido1',
@@ -133,10 +133,10 @@ class registro_responsable extends Conexion{
 	function modificarresponsable(){
 		$co1 = $this->conecta();
 		$co1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		if($this->existe($this->Rid)){
+		if($this->existe($this->RCedula)){
 			try {
 					$co1->query("Update responsable set
-					    Rid = '$this->Rid',
+					    RCedula = '$this->RCedula',
 						Nombre1 = '$this->Nombre1',
 						Nombre2 = '$this->Nombre2',
 						Apellido1 = '$this->Apellido1',
@@ -144,7 +144,7 @@ class registro_responsable extends Conexion{
 						Telefono = '$this->Telefono',
 						idNacionalidad = '$this->idNacionalidad'
 						where
-						Rid = '$this->Rid'
+						RCedula = '$this->RCedula'
 						");
 						return "responsable Modificado";
 			} catch(Exception $e) {
@@ -165,11 +165,11 @@ class registro_responsable extends Conexion{
 			echo "No se pudo conectar a la base de datos<br>";
 			return;}
 		$co1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		if($this->existe($this->Rid)){
+		if($this->existe($this->RCedula)){
 			try {
 					$co1->query("DELETE FROM responsable
 						WHERE
-						Rid = '$this->Rid'
+						RCedula = '$this->RCedula'
 						");
 						return "responsable Eliminado";
 			} catch(Exception $e) {
@@ -181,12 +181,12 @@ class registro_responsable extends Conexion{
 		}
 	}
 
-	public function existe($Rid){
+	public function existe($RCedula){
 		$co1 = $this->conecta();
 		$co1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 
-			$resultado = $co1->query("Select * from responsable where Rid='$Rid'");
+			$resultado = $co1->query("Select * from responsable where RCedula='$RCedula'");
 
 
 			$fila = $resultado->fetchAll(PDO::FETCH_BOTH);

@@ -25,19 +25,19 @@
                      <tbody>';
     $datosTablaresponsable="";
     foreach ($datos as $key => $value){
-        $a = $value['Rid'];
+        $a = $value['RCedula'];
         $datosTablaresponsable=$datosTablaresponsable.'  
                             <tr style="cursor:pointer">
-                                <td>'.$value['Rid'].'</td>
+                                <td>'.$value['RCedula'].'</td>
                                 <td>'.$value['Nombre1'].' '.$value['Nombre2'].'</td>
                                 <td>'.$value['Apellido1'].' '.$value['Apellido2'].'</td>
                                 <td>'.$value['Telefono'].'</td>
                                 <td> 
-                                <a id="newactividad" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalActividad" data-id="'.$value['Rid'].'"onclick="modificarDatosActividad('.$value['Rid'].')"><i class="fa-sharp fa-solid fa-list"></i>INGRESAR NUEVA ACTIVIDAD</a>
+                                <a id="newactividad" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalActividad" data-id="'.$value['RCedula'].'"onclick="InsertDatosActividad('.$value['RCedula'].')"><i class="fa-sharp fa-solid fa-list"></i>INGRESAR NUEVA ACTIVIDAD</a>
                                 </td>
                                 <td>                              
-                                <a id="modify" class="btn btn-success btn-sm" data-toggle="modal" data-target="#ModalSalon" data-id="'.$value['Rid'].'"onclick="modificarDatos('.$value['Rid'].')"><i class="fa-solid fa-user-pen"></i></a>
-                                <a class="btn btn-danger btn-sm" data-id="'.$value['Rid'].'" onclick="eliminarresponsable('.$value['Rid'].')"><i class="fa-solid fa-user-xmark"></i></a>
+                                <a id="modify" class="btn btn-success btn-sm" data-toggle="modal" data-target="#ModalSalon" data-id="'.$value['RCedula'].'"onclick="modificarDatos('.$value['RCedula'].')"><i class="fa-solid fa-user-pen"></i></a>
+                                <a class="btn btn-danger btn-sm" data-id="'.$value['RCedula'].'" onclick="eliminarresponsable('.$value['RCedula'].')"><i class="fa-solid fa-user-xmark"></i></a>
                                 </td>
                                 
                                
