@@ -214,6 +214,36 @@ function eliminarDatos(idSalon) {
         });
 
 
+    /* console.log("entrando a eliminar datos con ajax");
+     console.log("id de salon : "+idSalon);
+     // Hacer una petición AJAX para llamar al método eliminarDatos() del modelo
+     $.ajax({
+         url: "",
+         type: "POST",
+         data: { accion: "eliminar",
+             idSalon: idSalon },
+         success: function(response) {
+
+             swal("¡Hecho!",response,"success");
+
+             console.log(response);
+             // Recargar la página o actualizar los datos en la vista
+             mostrarDatosSalon();
+         },
+         error: function(xhr, status, error) {
+             swal("Advertencia","Ha ocurrido un error al eliminar el salón.", "warning");
+         }
+       });*/
+
+
+
+
+
+
+
+
+
+
 
 
 }
@@ -231,7 +261,7 @@ $(document).ready(function() {
 
     $("#incluir2").on("click", function(event) {
         event.preventDefault();
-        // console.log("insertar salon en la BD");
+        console.log("insertar salon en la BD");
         enviarAjax();
 
     });

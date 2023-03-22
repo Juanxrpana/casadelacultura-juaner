@@ -160,7 +160,7 @@ class registro_salon extends Conexion{
 						Nombredirector= '$this->Nombredirector',
 						Nombredirector2= '$this->Nombredirector2',
 						Apellidodirector= '$this->Apellidodirector',
-						Apellidodirector2= '$this->Apellidodirector2'
+						Apellidodirector2= '$this->Apellidodirector2',
 						where
 						idSalon = '$this->idSalon'
 						");

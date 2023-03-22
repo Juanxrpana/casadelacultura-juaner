@@ -83,59 +83,70 @@ CREATE TABLE IF NOT EXISTS `mydb`.`RequisitosActividad` (
   PRIMARY KEY (`idRequisitosActividad`))
 ENGINE = InnoDB;
 
--- -----------------------------------------------------
--- Table `mydb`.`Nacionalidad`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Nacionalidad` (
-  `idNacionalidad` INT NOT NULL,
-  `Nacionalidad` VARCHAR(1) NULL,
-  PRIMARY KEY (`idNacionalidad`))
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
--- Table `mydb`.`Responsable`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`responsable` (
-  `RCedula` INT NOT NULL,
-  `Nombre1` VARCHAR(20) NULL,
-  `Nombre2` VARCHAR(20) NULL,
-  `Apellido1` VARCHAR(20) NULL,
-  `Apellido2` VARCHAR(20) NULL,
-  `Telefono` INT NULL,
-  `Nacionalidad_idNacionalidad` INT NOT NULL,
-  PRIMARY KEY (`RCedula`),
-  INDEX `fk_responsable_Nacionalidad1_idx` (`Nacionalidad_idNacionalidad` ASC),
-  CONSTRAINT `fk_responsable_Nacionalidad1` FOREIGN KEY (`Nacionalidad_idNacionalidad`) REFERENCES `mydb`.`Nacionalidad` (`idNacionalidad`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB;
-
-
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Actividad`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Actividad` (
-  `idActividad` INT (11) AUTO_INCREMENT,
-  `Estatus` VARCHAR(10) NULL,
-  `NombreActividad` VARCHAR(45) NULL,
-  `FechaActividad` DATE NULL,
-  `Participantes` INT NULL,
-  `CantidadEncuentros` INT NULL,
-  `HoraInicio` TIME NULL,
-  `HoraCierre` TIME NULL,
-  `responsable_RCedula` INT NOT NULL,
-  `Salon_idSalon` INT NOT NULL,
+  `idActividad` INT (11) AUTO_INCREMENT, /* listo */
+  `Estatus` VARCHAR(10) NULL,/* validado */
+  `NombreActividad` VARCHAR(45) NULL,/* listo *//* validado */
+  `FechaActividad` DATE NULL,/* listo *//* validado */
+  `Participantes` INT NULL,/* listo *//* validado */
+  `CantidadEncuentros` INT NULL, /* listo *//* validado */
+  `HoraInicio` TIME NULL,/* listo */ /*Validado*/
+  `Cedula` INT NOT NULL,/* listo *//* validado */
+  `Nombre1` VARCHAR(45) NULL,/* listo *//* validado */
+  `Nombre2` VARCHAR(45) NULL,/* listo *//* validado */
+  `Apellido1` VARCHAR(45) NULL,/* listo *//* validado */
+  `Apellido2` VARCHAR(45) NULL,/* listo *//* validado */
+  `Telefono` INT NULL,/* listo *//* validado */
+  `HoraCierre` TIME NULL,/* listo *//* validado */
+  
+  /* `Salon_idSalon` INT NOT NULL,
   `IndoleActividad_idIndoleActividad` INT NOT NULL,
   `RequisitosActividad_idRequisitosActividad` INT NOT NULL,
   `TipoActividad_idTipoActividad` INT NOT NULL,
   `FocusActividad_idFocusActividad` INT NOT NULL,
-  `user_IdUsuario` INT NOT NULL,
-  PRIMARY KEY (`idActividad`),
-  INDEX `fk_Actividad_responsable1_idx` (`responsable_RCedula` ASC),
+  `user_IdUsuario` INT NOT NULL, */
+  PRIMARY KEY (`idActividad`))/*, 
   INDEX `fk_Actividad_Salon1_idx` (`Salon_idSalon` ASC),
-  CONSTRAINT `fk_Actividad_responsable1` FOREIGN KEY (`responsable_RCedula`) REFERENCES `mydb`.`responsable` (`RCedula`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_Actividad_Salon1` FOREIGN KEY (`Salon_idSalon`) REFERENCES `mydb`.`Salon` (`idSalon`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB;
-
+  INDEX `fk_Actividad_IndoleActividad1_idx` (`IndoleActividad_idIndoleActividad` ASC),
+  INDEX `fk_Actividad_RequisitosActividad1_idx` (`RequisitosActividad_idRequisitosActividad` ASC),
+  INDEX `fk_Actividad_TipoActividad1_idx` (`TipoActividad_idTipoActividad` ASC),
+  INDEX `fk_Actividad_FocusActividad1_idx` (`FocusActividad_idFocusActividad` ASC),
+  INDEX `fk_Actividad_user1_idx` (`user_IdUsuario` ASC),
+  CONSTRAINT `fk_Actividad_Salon1`
+    FOREIGN KEY (`Salon_idSalon`)
+    REFERENCES `mydb`.`Salon` (`idSalon`)
+     ON DELETE CASCADE
+     ON UPDATE CASCADE,
+  CONSTRAINT `fk_Actividad_IndoleActividad1`
+    FOREIGN KEY (`IndoleActividad_idIndoleActividad`)
+    REFERENCES `mydb`.`IndoleActividad` (`idIndoleActividad`)
+     ON DELETE CASCADE
+     ON UPDATE CASCADE,
+  CONSTRAINT `fk_Actividad_RequisitosActividad1`
+    FOREIGN KEY (`RequisitosActividad_idRequisitosActividad`)
+    REFERENCES `mydb`.`RequisitosActividad` (`idRequisitosActividad`)
+     ON DELETE CASCADE
+     ON UPDATE CASCADE,
+  CONSTRAINT `fk_Actividad_TipoActividad1`
+    FOREIGN KEY (`TipoActividad_idTipoActividad`)
+    REFERENCES `mydb`.`TipoActividad` (`idTipoActividad`)
+     ON DELETE CASCADE
+     ON UPDATE CASCADE,
+  CONSTRAINT `fk_Actividad_FocusActividad1`
+    FOREIGN KEY (`FocusActividad_idFocusActividad`)
+    REFERENCES `mydb`.`FocusActividad` (`idFocusActividad`)
+     ON DELETE CASCADE
+        ON UPDATE CASCADE,
+  CONSTRAINT `fk_Actividad_user1`
+    FOREIGN KEY (`user_IdUsuario`)
+    REFERENCES `mydb`.`user` (`IdUsuario`)
+     ON DELETE CASCADE
+        ON UPDATE CASCADE) */
+ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

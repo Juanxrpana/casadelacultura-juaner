@@ -5,5 +5,4 @@
 <!--Lineas para poder usar el framework Boostrap-->
  <link rel="stylesheet" href="css/bootstrap.min.css">
  <link rel="stylesheet" href="css/estilos.css">
- <link rel="stylesheet" href="css/sweetalert2.min.css">
  </head>

@@ -12,9 +12,10 @@
     $obj= new registro_actividad();
     $datos=$obj->mostraractividad();
 
-    $tablaactividad='<table class="table table-striped table-hover" id="tactividad">
+    $tablaactividad='<table class="table table-striped table-hover">
                      <thead>
                              <tr>
+                                <th scope="col">Numero de Actividad</th>
                                 <th scope="col">Nombre de la Actividad</th>
                                 <th scope="col">Fecha de la Actividad</th>
                                 <th scope="col"></th>
@@ -26,7 +27,7 @@
         $a = $value['idActividad'];
         $datosTablaactividad=$datosTablaactividad.'  
                             <tr style="cursor:pointer">
-                                
+                                <td>'.$value['idActividad'].'</td>
                                 <td>'.$value['NombreActividad'].'</td>
                                 <td>'.$value['FechaActividad'].'</td>
                                 

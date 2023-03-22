@@ -10,22 +10,10 @@
         </button>
       </div>
       <div class="modal-body">
-
-        <!--formulario-->
           <form id="frminsertActividad" class="formulario" action="" method="POST">
-             <!--  <label>Numero de la Actividad</label>
-              <input type="text" id="idActividad" name="idActividad" class="form-control form-control-sm" > -->
+              <label>Numero de la Actividad</label>
+              <input type="text" id="idActividad" name="idActividad" class="form-control form-control-sm" >
              
-             <!-- Cédula encargado  -->
-             <div class="formulario__grupo"  id="grupo__RCedula">
-              <label for="RCedula" class="formulario__label">Cedula del responsable de la Actividad</label>
-                <div class="formulario__grupo-input">
-                <input class="form-control" name="RCedula" id="RCedula"></input>
-                  <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
-                </div>
-                <p class="formulario__ipnut-error">La Cédula no debe estar vacia</p>
-              </div> 
-
               <!-- grupo Nombre de actividad -->
               <div class="formulario__grupo"  id="grupo__NombreActividad">
               <label for="NombreActividad" class="formulario__label">Nombre de la Actividad</label>
@@ -90,10 +78,70 @@
               <div class="formulario__grupo"  id="grupo__idsalon">
               <label for="idsalon" class="formulario__label">Salon  de la Actividad</label>
                 <div class="formulario__grupo-input">
-                  <select class="form-control" name="li-idsalon" id="li-idsalon"></select>                  
+                  <select class="form-control" id="li-idsalon"></select>                  
                   <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
                 </div>
                 <p class="formulario__ipnut-error">Debe escoger 1 salon</p>
+              </div> 
+
+              <!-- Cédula encargado  -->
+              <div class="formulario__grupo"  id="grupo__Cedula">
+              <label for="Cedula" class="formulario__label">Cedula del encargado de la Actividad</label>
+                <div class="formulario__grupo-input">
+                  <input type="text" id="Cedula" name="Cedula" class="form-control form-control-sm form__input">
+                  <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario__ipnut-error">La Cédula no debe estar vacia</p>
+              </div> 
+
+               <!-- grupo Nombre encargado -->
+               <div class="formulario__grupo"  id="grupo__Nombre1">
+              <label for="Nombre1" class="formulario__label">Nombre del Encargado de la Actividad</label>
+                <div class="formulario__grupo-input">
+                  <input type="text" id="Nombre1" name="Nombre1" class="form-control form-control-sm form__input">
+                  <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario__ipnut-error">El nombre del encargado de la actividad no debe llevar numeros ni caracteres especiales "();/&*</p>
+              </div> 
+
+               <!-- grupo Nombre encargado2 -->
+               <div class="formulario__grupo"  id="grupo__Nombre2">
+              <label for="Nombre2" class="formulario__label">Segundo nombre del Encargado de la Actividad</label>
+                <div class="formulario__grupo-input">
+                  <input type="text" id="Nombre2" name="Nombre2" class="form-control form-control-sm form__input">
+                  <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario__ipnut-error">El nombre del encargado de la actividad no debe llevar numeros ni caracteres especiales "();/&*</p>
+              </div> 
+
+               <!-- grupo Apellido encargado -->
+               <div class="formulario__grupo"  id="grupo__Apellido1">
+              <label for="Apellido1" class="formulario__label">Apellido del Encargado de la Actividad</label>
+                <div class="formulario__grupo-input">
+                  <input type="text" id="Apellido1" name="Apellido1" class="form-control form-control-sm form__input">
+                  <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario__ipnut-error">El apellido del encargado de la actividad no debe llevar numeros ni caracteres especiales "();/&*</p>
+              </div> 
+
+               <!-- grupo Apellido2 encargado -->
+               <div class="formulario__grupo"  id="grupo__Apellido2">
+              <label for="Apellido2" class="formulario__label">Segundo Apellido Encargado de la Actividad</label>
+                <div class="formulario__grupo-input">
+                  <input type="text" id="Apellido2" name="Apellido2" class="form-control form-control-sm form__input">
+                  <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario__ipnut-error">El apellido del encargado de la actividad no debe llevar numeros ni caracteres especiales "();/&*</p>
+              </div> 
+
+               <!-- grupo telefono encargado -->
+               <div class="formulario__grupo"  id="grupo__Telefono">
+              <label for="Telefono" class="formulario__label">Nro telefonico del Encargado de la Actividad</label>
+                <div class="formulario__grupo-input">
+                  <input type="text" id="Telefono" name="Telefono" class="form-control form-control-sm form__input" placeholder="04XX-XXXXXXX">
+                  <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario__ipnut-error">El teléfono del encargado de la actividad debe ser XXXX-XXXXXXX </p>
               </div> 
 
                <!-- grupo Estatus de actividad NO SE COMO USARLO AUN xd-->
@@ -105,8 +153,6 @@
                 </div>
                 <p class="formulario__ipnut-error">El Estatus de la actividad no debe estar vacio</p>
               </div> 
-
-              <input type="hidden" name="tipo_formulario" value="actividad">
               
               
               <br>

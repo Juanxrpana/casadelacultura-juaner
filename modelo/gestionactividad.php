@@ -32,8 +32,6 @@ class registro_actividad extends Conexion{
 	private $Apellido2;
 	private $Telefono;
 	private $HoraCierre;
-	private $li_idsalon;
-	private $Rid;
 
 	
 	//Ok ya tenemos los atributos, pero como son privados no podemos acceder a ellos desde fueran
@@ -68,19 +66,11 @@ class registro_actividad extends Conexion{
 		$this->HoraInicio = $valor;
 	}
 
-	function set_li_idsalon($valor){
-		$this->li_idsalon = $valor;
+	function set_Cedula($valor){
+		$this->Cedula = $valor;
 	}
 
-	function set_Rid($valor){
-		$this->Rid = $valor;
-	}
-
-	function set_HoraCierre($valor){
-		$this->HoraCierre = $valor;
-	}
-
-	/* function set_Nombre1($valor){
+	function set_Nombre1($valor){
 		$this->Nombre1 = $valor;
 	}
 
@@ -102,7 +92,7 @@ class registro_actividad extends Conexion{
 	
 	function set_HoraCierre($valor){
 		$this->HoraCierre = $valor;
-	} */
+	}
 
 	
 
@@ -142,17 +132,11 @@ class registro_actividad extends Conexion{
 		$this->HoraInicio = $valor;
 	}
 
-	function get_HoraCierre($valor){
-		$this->HoraCierre = $valor;
+	function get_Cedula($valor){
+		$this->Cedula = $valor;
 	}
 
-	 function get_Rid($valor){
-		$this->Rid = $valor;
-	}
-
-
-
-	/* function get_Nombre1($valor){
+	function get_Nombre1($valor){
 		$this->Nombre1 = $valor;
 	}
 
@@ -172,23 +156,15 @@ class registro_actividad extends Conexion{
 		$this->Telefono = $valor;
 	}
 	
-	 */
+	function get_HoraCierre($valor){
+		$this->HoraCierre = $valor;
+	}
 
     	
 	//Lo siguiente que demos hacer es crear los metodos para incluiractividad, consultar y eliminar
 
 	
 	
-	public function consultaresponsable(){
-		$co = $this->conecta();
-		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql=$co->prepare("SELECT Rid, Nombre1, Apellido1 FROM responsable");
-		$sql->execute();
-		$responsable = $sql->fetchAll(PDO::FETCH_ASSOC);
-		
-		return $responsable;
-	}
-
 	public function consultaSalon(){
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -206,39 +182,35 @@ class registro_actividad extends Conexion{
 		if(!$this->existe($this->idActividad)){
 		  try {
 			$co->query("INSERT INTO actividad(
-			 /*  idActividad, */
+			  idActividad,
 			  Estatus,
 			  NombreActividad,
 			  FechaActividad,
 			  Participantes,
 			  CantidadEncuentros,
 			  HoraInicio,
-			  Salon_idSalon,
 			  Cedula,
 			  Nombre1,
 			  Nombre2,
 			  Apellido1,
 			  Apellido2,
 			  Telefono,
-			  HoraCierre,
-			  Rid)
+			  HoraCierre)
 			  VALUES(
-			  /* '$this->idActividad', */
+			  '$this->idActividad',
 			  '$this->Estatus',
 			  '$this->NombreActividad',
 			  '$this->FechaActividad',
 			  '$this->Participantes',
 			  '$this->CantidadEncuentros',
 			  '$this->HoraInicio',
-			  '$this->li_idsalon', 
 			  '$this->Cedula',
 			  '$this->Nombre1',
 			  '$this->Nombre2',
 			  '$this->Apellido1',
 			  '$this->Apellido2',
 			  '$this->Telefono',
-			  '$this->HoraCierre',
-			  '$this->Rid'
+			  '$this->HoraCierre'
 			  
 			)");
 			$response = array('message' => 'done');
@@ -258,9 +230,9 @@ class registro_actividad extends Conexion{
 		$co = $this->conecta();
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		if($this->existe($this->idActividad)){
-			try { //idActividad = '$this->idActividad',
+			try {
 					$co->query("Update actividad set
-					    
+					    idActividad = '$this->idActividad',
 						Estatus = '$this->Estatus',
                         NombreActividad = '$this->NombreActividad',
                         FechaActividad =  '$this->FechaActividad', 
@@ -272,9 +244,7 @@ class registro_actividad extends Conexion{
 						Apellido1 = '$this->Apellido1',
 						Apellido2 = '$this->Apellido2',
 						Telefono = '$this->Telefono',
-						HoraCierre = '$this->HoraCierre',
-						li_idsalon = '$this->li_idsalon', 
-						Rid = '$this->Rid'
+						HoraCierre = '$this->HoraCierre'
 						where
 						idActividad = '$this->idActividad'
 						");
