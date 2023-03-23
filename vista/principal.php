@@ -38,12 +38,19 @@
                 </div>
             </div>
 
-            <a href="?pagina=login">
+            <a href="?pagina=gestionusuarios">
                 <div class="option">
                     <i class="far fa-address-card" title="Usuario"></i>
                     <h4>Usuario</h4>
                 </div>
             </a>
+
+           <!--  <a href="?pagina=gestionusuarios" style="margin-top: 100px;">
+                <div class="option">
+                <img src = "./img/user-gear-blanco.svg" style="width: 30; height: 33px;"/>
+                    <h4 style="padding-left: 10px">Configuración</h4>
+                </div>
+            </a> -->
 
         </div>
 

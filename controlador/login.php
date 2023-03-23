@@ -1,4 +1,5 @@
 <?php
+
   //verifica que exista la vista de
   //la pagina
 
@@ -23,7 +24,8 @@
       
       $arrayUser = $o->busca();
 
-      $arrayUser;
+      
+     
       $mensaje = $arrayUser[0][0];
       
       if (!isset($arrayuser)) {
@@ -39,10 +41,12 @@
       header("Location: .?pagina=principal");
       }
       else{
+       
         $mensaje = "Usuario o clave errados";
       }
       
     }
+   
     
     require_once("vista/".$pagina.".php"); 
   }

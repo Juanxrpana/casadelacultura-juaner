@@ -60,10 +60,10 @@ class login extends Conexion{
 		$co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		try{
 		
-			$resultado = $co->prepare("SELECT privilegio, IdUsuaario, Usuario FROM user WHERE 
-			cedula=:Usuario AND clave=:clave");
+			$resultado = $co->prepare("SELECT privilegio, IdUsuario, Usuario FROM user WHERE 
+			IdUsuario=:Usuario AND clave=:clave");
 			
-			$resultado->bindParam(':Usuario',$this->Usuario);
+			$resultado->bindParam(':Usuario',$this->IdUsuario);
 			$resultado->bindParam(':clave',$this->clave);
 			
 			$resultado->execute();
@@ -78,7 +78,7 @@ class login extends Conexion{
 			}
 			else{
 				
-				return "¡Error en los datos ingresados!";
+				return "";
 			}
 			
 		}catch(Exception $e){

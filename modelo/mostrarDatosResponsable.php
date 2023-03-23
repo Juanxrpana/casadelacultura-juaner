@@ -19,7 +19,7 @@
                                 <th scope="col">Apellido</th>
                                 <th scope="col">Teléfono</th>
                                 <th scope="col">Nueva Actividad</th>
-                                <th scope="col"></th>
+                                <th scope="col">Modificar/Eliminar</th>
                             </tr>
                      </thead>
                      <tbody>';

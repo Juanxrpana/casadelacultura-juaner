@@ -2,7 +2,7 @@
 
 //llamada al archivo que contiene la clase
 //usuarios, en ella estara el codigo que me //permitirá
-//guardar, consultar y modificar dentro de mi base //de user
+//guardar, consultar y modificar dentro de mi base //de datos
 
 
 //lo primero que se debe hacer es verificar al //igual que en la vista que exista el archivo
@@ -15,12 +15,12 @@ if (!is_file("modelo/".$pagina.".php")){
 
 require_once("modelo/".$pagina.".php");
   if(is_file("vista/".$pagina.".php")){
-       //bien si estamos aca es porque existe la //vista y la clase
-	    //por lo que lo primero que debemos hace es //realizar una instancia de la clase
-	   //instanciar es crear una variable local, //que contiene los metodos de la clase
+     //bien si estamos aca es porque existe la //vista y la clase
+	  //por lo que lo primero que debemos hace es //realizar una instancia de la clase
+	  //instanciar es crear una variable local, //que contiene los metodos de la clase
 	  //para poderlos usar
-    $o = new login(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
-      //clase registro_user
+      $o = new registro_usuario(); //ahora nuestro objeto //se llama $o y es una copia en memoria de la
+	  //clase registro_salon
       if(!empty($_POST)){
 
         //como ya sabemos si estamos aca es //porque se recibio alguna informacion
@@ -34,22 +34,24 @@ require_once("modelo/".$pagina.".php");
           //clase es guardar esos valores en ella //con los metodos set
           $accion = $_POST['accion'];
 
-
             if($accion=='eliminar'){
             $o->set_IdUsuario($_POST['IdUsuario']);
-            echo  $o->eliminaruser();}       
+            echo  $o->eliminarUsuario();}       
             
             else{
+              
               $o->set_IdUsuario($_POST['IdUsuario']);
               $o->set_Usuario($_POST['Usuario']);
               $o->set_clave($_POST['clave']);
-              $o->set_fechacreado($_POST['fechacreado']);
+              $o->set_Seguridad_idPregunta($_POST['Seguridad_idPregunta']);
               $o->set_privilegio($_POST['privilegio']);
+              
+
               if($accion=='insertar'){
-                echo  $o->incluiruser();
+                echo  $o->incluirusuario();
               }
               elseif($accion=='modificar'){
-                echo  $o->modificaruser();
+                echo  $o->modificarUsuario();
               }   
               }
                   
@@ -62,4 +64,3 @@ else{
     echo "pagina en construccion";
 }
 ?>
-

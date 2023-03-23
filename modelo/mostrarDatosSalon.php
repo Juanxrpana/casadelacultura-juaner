@@ -19,7 +19,7 @@
                                 <th scope="col">Nombre del salon</th>
                                 <th scope="col">Cantidad de personas por salon</th>
                                 <th scope="col">Cantidad de sillas por salon</th>
-                                <th scope="col"></th>
+                                <th scope="col">Modificar/Eliminar</th>
                             </tr>
                      </thead>
                      <tbody>';

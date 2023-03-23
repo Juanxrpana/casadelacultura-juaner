@@ -1,6 +1,6 @@
 <?php 
 
-$pagina = "principal"; 
+$pagina = "login"; 
 
 if (!empty($_GET['pagina'])){ //si no esta vacia la variable $pagina que viene por get
  $pagina = $_GET['pagina']; //cambia el valor de $pagina por el obtenido por GET

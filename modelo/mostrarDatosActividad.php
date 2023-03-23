@@ -17,7 +17,7 @@
                              <tr>
                                 <th scope="col">Nombre de la Actividad</th>
                                 <th scope="col">Fecha de la Actividad</th>
-                                <th scope="col"></th>
+                                <th scope="col">Modificar/Eliminar</th>
                             </tr>
                      </thead>
                      <tbody>';
@@ -33,7 +33,7 @@
                               
                                 <td>
 
-                                <a id="modify" class="btn btn-success btn-sm" data-toggle="modal" data-target="#ModalActividad" data-id="'.$value['idActividad'].'"onclick="modificarDatos('.$value['idActividad'].')"><i class="fa-solid fa-user-pen"></i></a>
+                                <a id="modify" class="btn btn-success btn-sm" data-toggle="modal" data-target="#ModalActividad" data-id="'.$value['idActividad'].'"onclick="modificarDatosActividad('.$value['idActividad'].')"><i class="fa-solid fa-user-pen"></i></a>
                                 <a class="btn btn-danger btn-sm" data-id="'.$value['idActividad'].'" onclick="eliminarActividad('.$value['idActividad'].')"><i class="fa-solid fa-user-xmark"></i></a>
 
                                 </td>

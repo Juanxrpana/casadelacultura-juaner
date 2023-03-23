@@ -22,7 +22,7 @@
      // Si hay al menos una fila de resultado
     if (count($actividades) > 0) {
   // Inicia la lista
-  echo '<ol class="list-group list-group-numbered">';
+  echo '<ol class="list-group list-group-numbered" style="margin-top: 20px;">';
         
   // Recorre todas las filas de resultado
   foreach ($actividades as $fila) {
