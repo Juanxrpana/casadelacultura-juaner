@@ -1,12 +1,13 @@
 <?php
 require_once("modelo/login.php");
-session_start();
-$user = $_SESSION['user'];
 
-    echo "Bienvenido, " . $user->nombre;?>
+?>
 
 <?php require_once("comunes/head.php");?>
 <?php require_once("comunes/barranotificacion.php")?>
+
+
+
 <!DOCTYPE html>
 <head>
     
@@ -16,59 +17,7 @@ $user = $_SESSION['user'];
     </head>
 <body id="body">
 
-    <div class="menu__side" id="menu_side">
-
-    <div class="name__page">
-        <span class="bolded"><img src="./img/Recurso3.png" alt="" style="width: 180;"></span>
-        </div>
-        
-        <div class="opciones__menu">
-
-        <a href="?pagina=principal" class="primero">
-                <div class="option">
-                <i class="fas fa-home" title="Inicio"></i>
-                <h4>Inicio</h4>
-            </div>
-        </a>
-
-        <a href="?pagina=registro" >
-                <div class="option">
-                    <i class="far fa-file" title="Registro"></i>
-                    <h4>Registrar</h4>
-                </div>
-            </a>
-
-            <a href="?pagina=reporte">
-                <div class="option">
-                    <i class="far fa-address-card" title="reporte"></i>
-                    <h4>Reporte</h4>
-                </div>
-            </a>
-            
-            <div id="noti">
-                <div class="option">
-                    <i class="far fa-sticky-note" title="Notificaciones"></i>
-                    <h4>Notificaciones</h4>
-                </div>
-            </div>
-
-            <a href="?pagina=gestionusuarios">
-                <div class="option">
-                    <i class="far fa-address-card" title="Usuario"></i>
-                    <h4>Usuario</h4>
-                </div>
-            </a>
-
-           <!--  <a href="?pagina=gestionusuarios" style="margin-top: 100px;">
-                <div class="option">
-                <img src = "./img/user-gear-blanco.svg" style="width: 30; height: 33px;"/>
-                    <h4 style="padding-left: 10px">Configuración</h4>
-                </div>
-            </a> -->
-
-        </div>
-
-    </div>
+   <?php require_once("comunes/menu.php")?>
     
 <main>
 

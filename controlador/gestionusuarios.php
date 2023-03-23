@@ -43,6 +43,7 @@ require_once("modelo/".$pagina.".php");
               $o->set_IdUsuario($_POST['IdUsuario']);
               $o->set_Usuario($_POST['Usuario']);
               $o->set_clave($_POST['clave']);
+              $o->set_respuesta($_POST['respuesta']);
               $o->set_Seguridad_idPregunta($_POST['Seguridad_idPregunta']);
               $o->set_privilegio($_POST['privilegio']);
               

@@ -12,53 +12,8 @@
 </head>
 
 <body id="body">
+    <?php require_once("comunes/menu.php")?>
 
-<div class="menu__side">
-
-    <div class="name__page">
-        <span class="bolded"><img src="./img/Recurso3.png" alt="" style="width: 180;"></span>
-        </div>
-        
-        <div class="opciones__menu">
-
-        <a href="?pagina=principal">
-                <div class="option">
-                <i class="fas fa-home" title="Inicio"></i>
-                <h4>Inicio</h4>
-            </div>
-        </a>
-
-        <a href="?pagina=registro"  class="primero">
-                <div class="option">
-                    <i class="far fa-file" title="Portafolio"></i>
-                    <h4>Registrar</h4>
-                </div>
-            </a>
-
-            <a href="?pagina=reporte">
-                <div class="option">
-                    <i class="far fa-address-card" title="reporte"></i>
-                    <h4>Reporte</h4>
-                </div>
-            </a>
-            
-            <div id="noti">
-                <div class="option">
-                    <i class="far fa-sticky-note" title="Blog"></i>
-                    <h4>Notificaciones</h4>
-                </div>
-            </div>
-
-            <a href="#">
-                <div class="option">
-                    <i class="far fa-address-card" title="Nosotros"></i>
-                    <h4>Usuario</h4>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
 <main>
 
 

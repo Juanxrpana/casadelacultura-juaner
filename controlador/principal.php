@@ -5,6 +5,7 @@
  //si existe se la trae, ahora ve a la carpeta vista
  //y busca el archivo principal.php 
  require_once("vista/".$pagina.".php"); 
+
  }
  else{
  echo "pagina principal en construccion";

@@ -2,7 +2,7 @@
 
   //verifica que exista la vista de
   //la pagina
-
+  error_reporting(E_ERROR);
     if (!is_file("modelo/".$pagina.".php")){
       //alli pregunte que si no es archivo se niega //con !
       //si no existe envio mensaje y me salgo
@@ -35,10 +35,8 @@
     
     //                PRIVILEGIO           IdUsuario
     if($mensaje=="admin" or $mensaje=='user'){
-      $user = new login($arrayUser[0][1], $arrayUser[0][2], $mensaje);
-      // almacenar el objeto User en la sesión
-      $_SESSION['user'] = $user;
-      session_start(); // Llamada a session_start() antes de header()
+       session_start(); // Llamada a session_start() antes de header()
+      $_SESSION['user'] = $arrayUser;
       header("Location: .?pagina=principal");
     }
       else{
