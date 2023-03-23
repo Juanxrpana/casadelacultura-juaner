@@ -26,7 +26,7 @@
     <style>
         body {
             background-image: url("<?= $base64 ?>");
-            background-size: 842px 1191px;
+            background-size: 750px 800px;
             background-repeat: no-repeat;
         }
     </style>
@@ -39,7 +39,7 @@
 
 <div>
 
-    <table style="border-collapse: collapse; z-index: 10;margin-top: 24%;">
+    <table style="border-collapse: collapse; z-index: 10;margin-top: 12%; margin-left: 2%;">
         <thead>
             <tr>
                 <th style="text-align: center; border: 2px solid black";>Actividad</th>

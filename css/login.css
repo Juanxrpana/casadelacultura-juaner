@@ -187,11 +187,11 @@ h2 {
 
 .slider-frame li {
     list-style: none;
-    width: 100%;
+    width: 500%;
 }
 
 .slider-frame img {
-    width: 130%;
+    width: 50%;
 }
 
 @keyframes slide {

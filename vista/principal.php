@@ -1,3 +1,10 @@
+<?php
+require_once("modelo/login.php");
+session_start();
+$user = $_SESSION['user'];
+
+    echo "Bienvenido, " . $user->nombre;?>
+
 <?php require_once("comunes/head.php");?>
 <?php require_once("comunes/barranotificacion.php")?>
 <!DOCTYPE html>
@@ -28,6 +35,13 @@
                 <div class="option">
                     <i class="far fa-file" title="Registro"></i>
                     <h4>Registrar</h4>
+                </div>
+            </a>
+
+            <a href="?pagina=reporte">
+                <div class="option">
+                    <i class="far fa-address-card" title="reporte"></i>
+                    <h4>Reporte</h4>
                 </div>
             </a>
             
@@ -64,8 +78,7 @@
     Bienvenido al Sistema de información y control para el proceso de datos del 
     Informe de Gestión Administrativo de la Casa de la Cultura Profesor José Ángel Rodríguez 
     López.</h4>
- </p>
-
+    
  <div class="container">
       <div class="bannerfoto">
         <div class="row justify-content-center align-items-center h-100">

@@ -35,8 +35,8 @@ class login extends Conexion{
 
 	//ahora la misma cosa pero para leer, es decir get
 
-	function get_IdUsuario($valor){
-		$this->IdUsuario = $valor;
+	function get_IdUsuario($arg1){
+		$this->IdUsuario = $arg1;
 	}
 
 	function get_Usuario($valor){

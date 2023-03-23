@@ -36,6 +36,13 @@
                     <h4>Registrar</h4>
                 </div>
             </a>
+
+            <a href="?pagina=reporte">
+                <div class="option">
+                    <i class="far fa-address-card" title="reporte"></i>
+                    <h4>Reporte</h4>
+                </div>
+            </a>
             
             <div id="noti">
                 <div class="option">
@@ -103,6 +110,8 @@
     <div id="tablaDatosResponsable"></div>
   </div>
 </div>
+
+
 
 </div> <!-- fin de container -->
 

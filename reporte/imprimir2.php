@@ -1,7 +1,7 @@
 <?php
 require_once('../dompdf/vendor/autoload.php'); 
 ob_start();
-require_once ('print_view.php');
+require_once ('print_view2.php');
 $html = ob_get_clean();
 
 
@@ -20,6 +20,6 @@ $pdf = new DOMPDF();
 		$pdf->render();
 		
 		// Enviamos el fichero PDF al navegador.
-		$pdf->stream("Reporte.pdf", array("Attachment" => false));
+		$pdf->stream("Reporte-Directorio.pdf", array("Attachment" => false));
 
 ?>

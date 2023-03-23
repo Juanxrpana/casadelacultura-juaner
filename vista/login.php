@@ -8,15 +8,13 @@
 <body>
 
   <section class="izquierda">
-    <div class="slider-frame">
-  <ul>  
-    <li><img src="./img/slide(1).jpg" alt=""></li>
-    <li><img src="./img/slide(2).jpg" alt=""></li>
-    <li><img src="./img/slide(3).jpg" alt=""></li>
-    <li><img src="./img/slide(4).jpg" alt=""></li>
+
+
+    <img src="./img/slide(1).jpg" alt="" style="width: 90%;">
     
-  </ul>
-</div>
+    
+
+
 <div id="mensajes" style="display:none">
           <?php
             if(!empty($mensaje)){
@@ -51,7 +49,7 @@
           <span class="icon arrow">
           </span>
         </span>
-        <span class="button-text">Registrar
+        <span class="button-text">Recordar contraseña
           </span>
       </button>
       </div>

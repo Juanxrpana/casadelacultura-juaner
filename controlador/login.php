@@ -34,12 +34,13 @@
       }
     
     //                PRIVILEGIO           IdUsuario
-      if($mensaje=="admin" or $mensaje=='user'){
-      session_start();
-      $_SESSION['nivel'] = $arrayUser;
-
+    if($mensaje=="admin" or $mensaje=='user'){
+      $user = new login($arrayUser[0][1], $arrayUser[0][2], $mensaje);
+      // almacenar el objeto User en la sesión
+      $_SESSION['user'] = $user;
+      session_start(); // Llamada a session_start() antes de header()
       header("Location: .?pagina=principal");
-      }
+    }
       else{
        
         $mensaje = "Usuario o clave errados";
