@@ -147,7 +147,22 @@ function validarenvio() {
     } else if (validarcampo(/^[0-9\b-]{1,5}$/, $("#CantidadPersonasSalon"), "CantidadPersonasSalon") === false) {
         solicituderror("Participantes <br/>SOLO NUMEROS ENTEROS");
         return false;
-    } else {
+    } else if (validarcampo(/^[0-9\b-]{1,5}$/, $("#CantidadSillas"), "CantidadSillas") === false) {
+        solicituderror("Participantes <br/>SOLO NUMEROS ENTEROS");
+        return false;
+    } else if (validarcampo(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{2,30}$/, $("#Nombredirector"), "Nombredirector") === false) {
+        solicituderror("Participantes <br/>SOLO NUMEROS ENTEROS");
+        return false;
+    } else if (validarcampo(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{2,30}$/, $("#Nombredirector2"), "Nombredirector2") === false) {
+        solicituderror("Participantes <br/>SOLO NUMEROS ENTEROS");
+        return false;
+    } else if (validarcampo(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{2,30}$/, $("#Apellidodirector"), "Apellidodirector") === false) {
+        solicituderror("Participantes <br/>SOLO NUMEROS ENTEROS");
+        return false;
+    } else if (validarcampo(/^[A-Za-z\b\s\u00f1\u00d1\u00E0-\u00FC]{2,30}$/, $("#Apellidodirector2"), "Apellidodirector2") === false) {
+        solicituderror("Participantes <br/>SOLO NUMEROS ENTEROS");
+        return false;
+    }  else {
         return true;
     }
 
